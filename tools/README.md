@@ -6,7 +6,7 @@ This directory contains small portfolio maintenance utilities.
 
 ## Emulare Screenshot Harness
 
-`EmulareScreenshotHarness.java` renders selected Emulare Swing device emulator frames to PNG files.
+`EmulareScreenshotHarness.java` renders selected Emulare Swing device emulator frames and a complete connected-device workbench to PNG files.
 
 It is intended for regenerating sanitized screenshots under:
 

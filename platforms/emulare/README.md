@@ -131,6 +131,7 @@ Hardware integration becomes more manageable when device behavior is modeled as 
 
 Sanitized screenshots generated from the Emulare Swing device emulators:
 
+- ![Complete Emulare device workbench with connected keyboard, scale, pinpad, cash drawer, and test trace](screenshots/emulare-complete-device-workbench.png)
 - ![Programmable keyboard serial emulator](screenshots/keyboard-serial-emulator.png)
 - ![Toledo Prix 8217 scale emulator](screenshots/scale-toledo-prix-8217.png)
 - ![SiTEF pinpad emulator](screenshots/pinpad-sitef-emulator.png)
