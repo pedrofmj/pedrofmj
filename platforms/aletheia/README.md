@@ -126,9 +126,14 @@ AI-oriented systems become easier to evaluate when reasoning, environment state,
 
 ## Screenshots
 
-No public screenshots are included yet.
+Sanitized production screenshots are available under [screenshots](screenshots/):
 
-Future images should be sanitized and added under [screenshots](screenshots/).
+- [Public release page](screenshots/01-public-soon.png)
+- [Portal access request form](screenshots/02-register-request-access.png)
+- [Access request submitted](screenshots/03-register-submitted.png)
+- [Aletheia Web Workbench sign-in](screenshots/08-aletheia-web-ui-login.png)
+
+The full portal-to-workbench capture requires an approved production demo account or a production portal administrator so the portal can approve the user, grant the module, provision the dedicated Matrix root, and generate the Web UI handoff.
 
 ---
 
