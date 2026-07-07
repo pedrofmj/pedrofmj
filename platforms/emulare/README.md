@@ -129,9 +129,14 @@ Hardware integration becomes more manageable when device behavior is modeled as 
 
 ## Screenshots
 
-No public screenshots are included yet.
+Sanitized screenshots generated from the Emulare Swing device emulators:
 
-Future images should be sanitized and added under [screenshots](screenshots/).
+- ![Programmable keyboard serial emulator](screenshots/keyboard-serial-emulator.png)
+- ![Toledo Prix 8217 scale emulator](screenshots/scale-toledo-prix-8217.png)
+- ![SiTEF pinpad emulator](screenshots/pinpad-sitef-emulator.png)
+- ![Cash drawer serial emulator](screenshots/cash-drawer-serial-emulator.png)
+
+Screenshot inventory: [screenshots](screenshots/).
 
 ---
 

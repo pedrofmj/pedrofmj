@@ -1,8 +1,15 @@
 # Screenshots
 
-This directory is reserved for sanitized Emulare screenshots and diagrams.
+This directory contains sanitized Emulare screenshots generated from public-safe Swing device emulator views.
 
-Suggested future files:
+## Current Images
+
+- `keyboard-serial-emulator.png` - programmable keyboard serial emulator
+- `scale-toledo-prix-8217.png` - Toledo Prix 8217 scale emulator
+- `pinpad-sitef-emulator.png` - SiTEF pinpad emulator
+- `cash-drawer-serial-emulator.png` - cash drawer serial emulator
+
+## Future Images
 
 - `overview.png`
 - `device-profile.png`
