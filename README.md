@@ -4,6 +4,21 @@ Software Engineer focused on building **backend systems, hardware integrations, 
 
 ---
 
+## 🧭 Navigation
+
+- [About Me](#-about-me)
+- [Core Areas](#-core-areas)
+- [What I am Currently Doing](#-what-im-currently-doing)
+- [Technologies](#-technologies)
+- [Engineering Approach](#-engineering-approach)
+- [Software Platforms](#-software-platforms)
+- [Research](#-research)
+- [Selected Work](#-selected-work)
+- [Open to](#-open-to)
+- [Contact](#-contact)
+
+---
+
 ## 🧠 About Me
 
 I work deeply with systems that go beyond typical CRUD applications.
@@ -24,9 +39,11 @@ I’m particularly interested in:
 ## ⚙️ Core Areas
 
 - Backend Development (Java / system design)
+- Software architecture and technical leadership
 - Hardware & Serial Communication Integration
 - Distributed and scalable systems
 - Problem solving & algorithmic thinking
+- Applied research from real-world software platforms
 
 ---
 
@@ -36,6 +53,7 @@ I’m particularly interested in:
 - Contributing to open source projects (focused on systems & Java)
 - Practicing algorithmic problem solving (LeetCode / CodeSignal)
 - Exploring real-world datasets and applied problems
+- Connecting long-term software platforms with future research work
 
 ---
 
@@ -44,8 +62,8 @@ I’m particularly interested in:
 - Programming Languages: Java, C#, C, C++, Python, PHP, Prolog, LISP, Common LISP, JavaScript, TypeScript
 - Databases: SQL (MySQL, SQL Server, PostgreSQL, DB2, Sybase, Oracle DB), No-SQL (MongoDB / Atlas)
 - Cloud: AWS, Azure, GCP, Oracle Cloud
-- Frameworks: Angular, React,
-- ORMs, DALs: Hibernate, Linq, Entity Framework, Eloquent, Doctrine, SqlAlchemy 
+- Frameworks: Angular, React
+- ORMs, DALs: Hibernate, Linq, Entity Framework, Eloquent, Doctrine, SqlAlchemy
 - System integrations (serial communication, device interaction)
 - Backend architecture
 - Linux environments
@@ -64,9 +82,48 @@ I focus on:
 
 ---
 
+## 🧩 Software Platforms
+
+This repository now includes public, high-level documentation for software platforms I have built, designed, or evolved.
+
+The goal is to explain purpose, motivation, business problem, architecture direction, engineering decisions, roadmap, and research opportunities without exposing proprietary source code.
+
+- [Aletheia](platforms/aletheia/) - AI, cognition, reasoning, and knowledge organization
+- [Emulare](platforms/emulare/) - hardware and device emulation for testing and integration
+- [EgypTeam Via](platforms/egyptteam-via/) - operational workflows, traceability, and business process coordination
+- [EgypTeam POS](platforms/egyptteam-pos/) - point-of-sale operations, device integration, and commercial workflows
+- [CDM](platforms/cdm/) - data management, validation, and operational consistency
+- [Testing Control Center](platforms/testing-control-center/) - testing governance, execution visibility, and quality control
+
+Start here: [Software Platforms](platforms/)
+
+---
+
+## 🔬 Research
+
+My research work grows from the same engineering concerns that shape my software platforms: architecture, integration, reliability, testing, data quality, reasoning systems, and long-term maintainability.
+
+This section represents my work as an Independent Researcher while preserving my primary professional identity as a Software Engineer, Software Architect, and Technology Leader.
+
+- [Research Index](research/)
+- [Papers](research/papers/)
+- [Technical Reports](research/technical-reports/)
+- [Whitepapers](research/whitepapers/)
+- [Proposals](research/proposals/)
+- [Experiments](research/experiments/)
+- [Datasets](research/datasets/)
+- [Figures](research/figures/)
+- [Bibliography](research/bibliography/)
+
+Future papers and reports should connect back to the software platforms that generated the research question.
+
+---
+
 ## 📌 Selected Work
 
 Below are some of the systems I’ve been building, each reflecting a different aspect of system design, real-world integration, and problem solving.
+
+Some of these systems now have dedicated high-level documentation in [Software Platforms](platforms/).
 
 ---
 
@@ -76,6 +133,7 @@ An artificial intelligence and cognitive framework designed to structure reasoni
 - Combines AI concepts with structured cognitive modeling
 - Focus on reasoning, abstraction, and knowledge organization
 - Designed as a foundation for building intelligent, extensible systems
+- Platform documentation: [Aletheia](platforms/aletheia/)
 
 > Aletheia represents my interest in how systems can model thought, not just process data.
 
@@ -90,6 +148,7 @@ A system for emulating real-world hardware devices used in commercial environmen
   - money dispensers (supermarket/POS environments)
 - Enables testing, simulation, and integration without physical hardware
 - Focus on protocol accuracy and real-world behavior reproduction
+- Platform documentation: [Emulare](platforms/emulare/)
 
 > Emulare reflects my experience with hardware integration and my approach to building reliable testing environments.
 
