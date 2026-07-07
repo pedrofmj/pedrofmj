@@ -26,27 +26,27 @@ Status markers:
 
 For each platform under `platforms/`, complete the same documentation review:
 
-- [ ] Confirm the purpose is accurate and understandable to someone without repository access.
-- [ ] Rewrite the motivation using real business context that is safe to publish.
-- [ ] Describe the business problem without exposing customers, contracts, credentials, or private workflows.
-- [ ] Expand the architecture overview with high-level diagrams or structured explanations.
-- [ ] List technologies at category level, avoiding private infrastructure details.
-- [ ] Document the most important engineering decisions and tradeoffs.
+- [?] Confirm the purpose is accurate and understandable to someone without repository access.
+- [?] Rewrite the motivation using real business context that is safe to publish.
+- [x] Describe the business problem without exposing customers, contracts, credentials, or private workflows.
+- [x] Expand the architecture overview with high-level diagrams or structured explanations.
+- [x] List technologies at category level, avoiding private infrastructure details.
+- [x] Document the most important engineering decisions and tradeoffs.
 - [ ] Add sanitized screenshots or diagrams.
-- [ ] Add meaningful alt text for every image.
-- [ ] Replace screenshot README files with actual image inventories once images exist.
-- [ ] Add a public-safe roadmap with near-term, medium-term, and long-term items.
-- [ ] Connect each roadmap item to either product evolution, engineering quality, or research potential.
-- [ ] Verify that no proprietary source code, private schema, customer data, credentials, or internal endpoints are included.
+- [?] Add meaningful alt text for every image.
+- [?] Replace screenshot README files with actual image inventories once images exist.
+- [x] Add a public-safe roadmap with near-term, medium-term, and long-term items.
+- [x] Connect each roadmap item to either product evolution, engineering quality, or research potential.
+- [x] Verify that no proprietary source code, private schema, customer data, credentials, or internal endpoints are included.
 
 Platforms to complete:
 
-- [ ] Aletheia
-- [ ] Emulare
-- [ ] EgypTeam Via
-- [ ] EgypTeam POS
-- [ ] CDM
-- [ ] Testing Control Center
+- [?] Aletheia
+- [?] Emulare
+- [?] EgypTeam Via
+- [?] EgypTeam POS
+- [?] CDM
+- [?] Testing Control Center
 
 ---
 

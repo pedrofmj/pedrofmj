@@ -72,6 +72,11 @@ Key engineering decisions include:
 - supporting manual exploration and automated test flows
 - collecting diagnostics that help reproduce integration issues
 
+Tradeoffs considered:
+
+- prioritizing deterministic scenarios over reproducing every physical environment variation
+- documenting emulator behavior without exposing proprietary protocol details
+
 ---
 
 ## Screenshots
@@ -84,11 +89,19 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 
 ## Future Roadmap
 
-- Expand the catalog of device profiles
-- Add more repeatable integration scenarios
-- Improve diagnostics for communication failures
-- Connect emulation flows with test orchestration
-- Prepare public technical reports about emulator-based testing
+Near-term:
+
+- [Product evolution] Expand the catalog of device profiles with public-safe descriptions.
+- [Engineering quality] Add more repeatable integration scenarios for regression testing.
+
+Medium-term:
+
+- [Engineering quality] Improve diagnostics for communication failures and scenario reproduction.
+- [Product evolution] Connect emulation flows with test orchestration workflows.
+
+Long-term:
+
+- [Research] Prepare public technical reports about emulator-based testing and simulation fidelity.
 
 ---
 

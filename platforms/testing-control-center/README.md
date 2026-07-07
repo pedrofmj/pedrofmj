@@ -72,6 +72,11 @@ Key engineering decisions include:
 - supporting manual and automated test flows
 - connecting quality signals to engineering decisions
 
+Tradeoffs considered:
+
+- prioritizing reproducibility and evidence over lightweight ad hoc test notes
+- describing quality workflows without exposing internal pipelines or proprietary test cases
+
 ---
 
 ## Screenshots
@@ -84,11 +89,19 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 
 ## Future Roadmap
 
-- Define public test governance concepts
-- Add sanitized diagrams for test execution flow
-- Connect Emulare scenarios to platform-managed tests
-- Improve quality reporting documentation
-- Prepare technical reports about test observability
+Near-term:
+
+- [Engineering quality] Define public test governance concepts and evidence boundaries.
+- [Engineering quality] Add sanitized diagrams for test execution flow.
+
+Medium-term:
+
+- [Product evolution] Connect Emulare scenarios to platform-managed tests.
+- [Engineering quality] Improve quality reporting documentation for manual and automated testing.
+
+Long-term:
+
+- [Research] Prepare technical reports about test observability, evidence, and reproducibility.
 
 ---
 

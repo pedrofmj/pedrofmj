@@ -72,6 +72,11 @@ Key engineering decisions include:
 - keeping audit trails visible and reviewable
 - designing the platform for long-term maintainability
 
+Tradeoffs considered:
+
+- prioritizing transaction integrity and diagnostics over exposing vendor-specific or fiscal implementation details
+- isolating device boundaries even when that adds architectural complexity
+
 ---
 
 ## Screenshots
@@ -84,11 +89,19 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 
 ## Future Roadmap
 
-- Expand public architecture diagrams
-- Document sanitized device integration patterns
-- Improve testing strategy documentation
-- Connect POS workflows with Emulare test scenarios
-- Prepare technical reports about reliability and integration design
+Near-term:
+
+- [Engineering quality] Expand public architecture diagrams for checkout, integration, and traceability boundaries.
+- [Engineering quality] Document sanitized device integration patterns.
+
+Medium-term:
+
+- [Engineering quality] Improve testing strategy documentation for transaction-heavy workflows.
+- [Product evolution] Connect POS workflows with Emulare test scenarios.
+
+Long-term:
+
+- [Research] Prepare technical reports about reliability, transaction integrity, and integration design.
 
 ---
 

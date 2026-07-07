@@ -72,6 +72,11 @@ Key engineering decisions include:
 - supporting future expansion across operational domains
 - documenting platform behavior in a way that can support research later
 
+Tradeoffs considered:
+
+- prioritizing traceability and auditability over undocumented workflow shortcuts
+- using generalized process language instead of private business terminology
+
 ---
 
 ## Screenshots
@@ -84,11 +89,19 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 
 ## Future Roadmap
 
-- Expand public documentation as non-sensitive details become available
-- Map core workflows to technical reports
-- Identify measurable operational quality indicators
-- Improve platform-level architecture diagrams
-- Connect sanitized operational patterns to research experiments
+Near-term:
+
+- [Product evolution] Expand public documentation as non-sensitive details become available.
+- [Engineering quality] Improve platform-level architecture diagrams for workflow and integration boundaries.
+
+Medium-term:
+
+- [Research] Map core operational workflows to future technical reports.
+- [Engineering quality] Identify measurable operational quality indicators.
+
+Long-term:
+
+- [Research] Connect sanitized operational patterns to experiments about traceability and process visibility.
 
 ---
 

@@ -67,6 +67,11 @@ Key engineering decisions include:
 - emphasizing traceability between inputs, reasoning, and outcomes
 - supporting experimentation without binding the platform to a single domain
 
+Tradeoffs considered:
+
+- prioritizing structured reasoning and traceability over quick one-off AI outputs
+- keeping public documentation implementation-neutral so the architecture can be discussed safely
+
 ---
 
 ## Screenshots
@@ -79,11 +84,19 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 
 ## Future Roadmap
 
-- Formalize the core cognitive model
-- Define evaluation metrics for reasoning quality
-- Document example reasoning workflows
-- Connect the platform to controlled datasets
-- Prepare research notes and technical reports
+Near-term:
+
+- [Engineering quality] Formalize the core cognitive model and document stable concepts.
+- [Product evolution] Document example reasoning workflows that can be reused across domains.
+
+Medium-term:
+
+- [Research] Define evaluation metrics for reasoning quality and consistency.
+- [Engineering quality] Connect the platform to controlled synthetic datasets for repeatable evaluation.
+
+Long-term:
+
+- [Research] Prepare research notes and technical reports about traceable AI-assisted reasoning.
 
 ---
 

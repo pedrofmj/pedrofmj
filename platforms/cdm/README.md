@@ -72,6 +72,11 @@ Key engineering decisions include:
 - preserving traceability across data changes
 - supporting future analytical and research use cases
 
+Tradeoffs considered:
+
+- prioritizing explicit validation over hidden correction logic
+- discussing data quality patterns without exposing private schemas or operational records
+
 ---
 
 ## Screenshots
@@ -84,11 +89,19 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 
 ## Future Roadmap
 
-- Document public data quality concepts
-- Add sanitized diagrams of data flow
-- Define measurable data reliability indicators
-- Connect platform behavior to research experiments
-- Prepare technical reports about validation and governance
+Near-term:
+
+- [Engineering quality] Document public data quality concepts and validation boundaries.
+- [Engineering quality] Add sanitized diagrams of data flow and governance responsibilities.
+
+Medium-term:
+
+- [Research] Define measurable data reliability indicators.
+- [Product evolution] Connect platform behavior to reporting and operational improvement workflows.
+
+Long-term:
+
+- [Research] Prepare technical reports about validation, traceability, and data governance.
 
 ---
 
