@@ -32,7 +32,7 @@ For each platform under `platforms/`, complete the same documentation review:
 - [x] Expand the architecture overview with high-level diagrams or structured explanations.
 - [x] List technologies at category level, avoiding private infrastructure details.
 - [x] Document the most important engineering decisions and tradeoffs.
-- [ ] Add sanitized screenshots or diagrams.
+- [x] Add sanitized screenshots or diagrams.
 - [?] Add meaningful alt text for every image.
 - [?] Replace screenshot README files with actual image inventories once images exist.
 - [x] Add a public-safe roadmap with near-term, medium-term, and long-term items.
@@ -51,22 +51,23 @@ Platform pages reviewed against local repositories:
 
 ## 3. Platform Expansion Beyond The Initial Structure
 
-- [ ] Add architecture diagrams for each platform using sanitized names and simplified boundaries.
-- [ ] Add one public-safe usage scenario per platform.
-- [ ] Add one technical challenge per platform and explain how the architecture addresses it.
-- [ ] Add one reliability, scalability, maintainability, or testing lesson learned per platform.
-- [ ] Add relationships between platforms where relevant, such as EgypTeam Via using Emulare for commercial-device workflow testing.
-- [ ] Add a common platform documentation template for future platforms.
-- [ ] Add naming conventions for future platform folders.
-- [ ] Add a short privacy and confidentiality note to the platform index.
-- [ ] Add a platform status field to each page, such as concept, active, maintained, archived, or research-oriented.
-- [ ] Add a "Related Research" section to each platform once research artifacts exist.
+- [x] Add architecture diagrams for each platform using sanitized names and simplified boundaries.
+- [x] Add one public-safe usage scenario per platform.
+- [x] Add one technical challenge per platform and explain how the architecture addresses it.
+- [x] Add one reliability, scalability, maintainability, or testing lesson learned per platform.
+- [x] Add relationships between platforms where relevant, such as EgypTeam Via using Emulare for commercial-device workflow testing.
+- [x] Add a common platform documentation template for future platforms.
+- [x] Add naming conventions for future platform folders.
+- [x] Add a short privacy and confidentiality note to the platform index.
+- [x] Add a platform status field to each page, such as concept, active, maintained, archived, or research-oriented.
+- [x] Add a "Related Research" section to each platform with current research directions and future artifact targets.
 
 ---
 
 ## 4. Research Section Completion
 
 - [ ] Define the main research themes that connect to the software platforms.
+- [x] Decide whether public EgypTeam research lines AATools and Babu should become profile platform pages, research-only entries, or remain external references. Current decision: research-only entries.
 - [ ] Add a research roadmap organized by theme.
 - [ ] Add a publication pipeline describing how proposals become experiments, reports, papers, and datasets.
 - [ ] Create a standard paper README structure.

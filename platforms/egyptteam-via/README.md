@@ -6,6 +6,14 @@ EgypTeam Via is a corporate commercial platform centered on Via Appia, with curr
 
 ---
 
+## Platform Status
+
+- Status: Active commercial platform
+- Documentation level: Public domain and architecture summary
+- Public boundary: no private business rules, customer data, deployment endpoints, or internal operational details
+
+---
+
 ## Purpose
 
 EgypTeam Via supports commercial operations where catalog selection, active sale state, item quantities, payment entries, discounts, change, and sale closing rules must remain consistent.
@@ -47,6 +55,16 @@ At a public level, EgypTeam Via can be described through these components:
 
 Specific business rules, deployment endpoints, and internal implementation details are intentionally excluded.
 
+```mermaid
+flowchart LR
+    operator[Operator] --> ui[Web UI or CLI]
+    ui --> sale[Sale lifecycle service]
+    sale --> cart[Cart state and item quantities]
+    sale --> payments[Payment entries discounts and change]
+    sale --> store[Commercial persistence]
+    sale --> checks[Validation and closing rules]
+```
+
 ---
 
 ## Technologies
@@ -81,6 +99,34 @@ Tradeoffs considered:
 
 ---
 
+## Usage Scenario
+
+An operator starts a current sale, adds catalog items, adjusts quantities, records multiple payment entries, and closes the sale only after totals, discounts, remaining value, and change are reconciled.
+
+---
+
+## Technical Challenge
+
+The main challenge is maintaining a consistent mutable sale state while operators repeatedly change items, quantities, payment entries, discounts, and closing outcomes.
+
+The architecture addresses this by centralizing sale lifecycle behavior and recalculating transaction state after every relevant mutation.
+
+---
+
+## Engineering Lesson Learned
+
+Commercial workflows should make state transitions explicit because hidden cart mutation rules are difficult to test, explain, and audit.
+
+---
+
+## Platform Relationships
+
+- Can use Emulare to validate commercial-device workflows where external peripherals are involved.
+- Can generate transaction-state scenarios for future research experiments.
+- Can provide commercial workflow examples for Aletheia-style reasoning and evaluation studies.
+
+---
+
 ## Screenshots
 
 No public screenshots are included yet.
@@ -104,6 +150,14 @@ Medium-term:
 Long-term:
 
 - [Research] Prepare technical reports about sale lifecycle modeling and commercial workflow validation.
+
+---
+
+## Related Research
+
+- Research index: [Research](../../research/)
+- Primary direction: commercial transaction state, sale lifecycle validation, payment composition, and workflow correctness
+- Future artifacts: technical reports, scripted lifecycle experiments, and synthetic commercial transaction datasets
 
 ---
 

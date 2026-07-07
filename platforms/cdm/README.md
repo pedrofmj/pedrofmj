@@ -6,6 +6,14 @@ CDM is a water measurement system for collecting, synchronizing, managing, and a
 
 ---
 
+## Platform Status
+
+- Status: Active applied platform
+- Documentation level: Public architecture summary and research mapping
+- Public boundary: no customer data, private measurement records, credentials, or deployment details
+
+---
+
 ## Purpose
 
 CDM supports field collection of water readings, API-based synchronization, administrative review, reporting, and export workflows.
@@ -47,6 +55,17 @@ At a public level, CDM can be described through these components:
 
 The documentation avoids private customer data, credentials, deployment details, and proprietary business rules.
 
+```mermaid
+flowchart LR
+    collector[Field collector] --> mobile[Mobile collection app]
+    mobile --> local[Offline local storage]
+    mobile --> api[Synchronization API]
+    api --> records[Readings batches metadata and images]
+    records --> dashboard[Admin dashboard]
+    dashboard --> exports[Reports and exports]
+    records --> research[Quality and validation research]
+```
+
 ---
 
 ## Technologies
@@ -81,6 +100,34 @@ Tradeoffs considered:
 
 ---
 
+## Usage Scenario
+
+A field collector records meter readings offline, attaches image evidence, submits readings in controlled batches, and an administrator reviews the synchronized data through dashboards and exports.
+
+---
+
+## Technical Challenge
+
+The main challenge is preserving measurement reliability across offline collection, image evidence, synchronization, administrative review, and export workflows.
+
+The architecture addresses this by separating mobile collection, local persistence, API synchronization, measurement records, evidence handling, and dashboard review.
+
+---
+
+## Engineering Lesson Learned
+
+Field data quality improves when the system preserves both the measured value and the evidence needed to review that value later.
+
+---
+
+## Platform Relationships
+
+- Can generate research datasets and experiments for Aletheia-style validation and reasoning studies.
+- Shares traceability and evidence-review concerns with EgypTeam POS document workflows.
+- Can contribute field-data quality lessons to future operational platforms.
+
+---
+
 ## Screenshots
 
 No public screenshots are included yet.
@@ -104,6 +151,16 @@ Medium-term:
 Long-term:
 
 - [Research] Evaluate OCR-assisted reading recognition and evidence-backed measurement validation.
+
+---
+
+## Related Research
+
+- Research index: [Research](../../research/)
+- Public product site: [cdm.egypteam.com](https://cdm.egypteam.com/)
+- Public EgypTeam research page: [egypteam.com/research/cdm](https://egypteam.com/research/cdm)
+- Primary direction: field measurement quality, offline synchronization, evidence-backed validation, and OCR-assisted review
+- Future artifacts: technical reports, synthetic measurement datasets, and controlled validation experiments
 
 ---
 

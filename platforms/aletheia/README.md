@@ -6,6 +6,14 @@ Aletheia is an AI and cognitive framework for agent-based environments, multi-ag
 
 ---
 
+## Platform Status
+
+- Status: Active and research-oriented
+- Documentation level: Public architecture summary and research mapping
+- Public boundary: no source code, credentials, private datasets, or deployment details
+
+---
+
 ## Purpose
 
 Aletheia explores how software systems can model reasoning, operate environments, coordinate agents, and preserve knowledge across repeatable workflows.
@@ -44,6 +52,16 @@ At a public level, Aletheia can be described through these layers:
 
 This description is intentionally implementation-neutral and avoids private source details.
 
+```mermaid
+flowchart LR
+    user[Researcher or operator] --> workbench[Desktop web and portal workbenches]
+    workbench --> runtime[Matrix runtime]
+    runtime --> envs[Agent environments]
+    runtime --> scripts[Scripting workflows]
+    runtime --> stores[Runtime and knowledge stores]
+    envs --> evaluation[Evaluation and research outputs]
+```
+
 ---
 
 ## Technologies
@@ -78,6 +96,34 @@ Tradeoffs considered:
 
 ---
 
+## Usage Scenario
+
+A researcher defines a controlled environment, connects agents or scripts to it, observes repeated runs, and uses the workbench to inspect behavior, state, and evaluation signals.
+
+---
+
+## Technical Challenge
+
+The main challenge is keeping environments, agents, scripts, persistence, and human workbenches coordinated without turning the framework into a single-purpose AI application.
+
+The architecture addresses this by separating environment lifecycle, runtime coordination, scripting, persistence, and presentation concerns.
+
+---
+
+## Engineering Lesson Learned
+
+AI-oriented systems become easier to evaluate when reasoning, environment state, and execution history are explicit parts of the architecture instead of hidden side effects.
+
+---
+
+## Platform Relationships
+
+- Can inform AI-assisted workflow design in EgypTeam POS.
+- Can provide research patterns for evaluation and structured reasoning across future platform experiments.
+- Can support synthetic experiments derived from CDM and EgypTeam Via scenarios.
+
+---
+
 ## Screenshots
 
 No public screenshots are included yet.
@@ -101,6 +147,16 @@ Medium-term:
 Long-term:
 
 - [Research] Prepare research notes and technical reports about traceable AI-assisted reasoning.
+
+---
+
+## Related Research
+
+- Research index: [Research](../../research/)
+- Public product site: [aletheia.egypteam.com](https://aletheia.egypteam.com/)
+- Public EgypTeam research page: [egypteam.com/research/aletheia](https://egypteam.com/research/aletheia)
+- Primary direction: structured reasoning, agent environments, evaluation workflows, and AI-assisted decision support
+- Future artifacts: technical reports, controlled experiments, and synthetic reasoning datasets
 
 ---
 

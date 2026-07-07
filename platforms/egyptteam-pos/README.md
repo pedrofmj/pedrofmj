@@ -6,6 +6,14 @@ EgypTeam POS is a Professional Operating System for independent professionals, c
 
 ---
 
+## Platform Status
+
+- Status: Active professional platform
+- Documentation level: Public domain, architecture, and research summary
+- Public boundary: no private professional records, customer data, generated documents, or internal storage details
+
+---
+
 ## Purpose
 
 EgypTeam POS centralizes professional operations that are usually scattered across CRMs, invoicing tools, resume files, notes, spreadsheets, and communication history.
@@ -48,6 +56,16 @@ At a public level, EgypTeam POS can be described through these components:
 
 Private data, customer-specific records, and internal storage details are intentionally not documented here.
 
+```mermaid
+flowchart LR
+    professional[Professional user] --> workspace[Web workspace]
+    workspace --> domain[Organizations people opportunities engagements documents]
+    domain --> docs[Documents invoices and generated content]
+    domain --> ai[AI assistance and knowledge retrieval]
+    domain --> store[Workspace persistence]
+    ai --> review[Human review and reuse]
+```
+
 ---
 
 ## Technologies
@@ -82,6 +100,34 @@ Tradeoffs considered:
 
 ---
 
+## Usage Scenario
+
+A consultant records client context, tracks an opportunity, prepares a resume variant or communication draft, generates an invoice, and preserves the relationship history for future review.
+
+---
+
+## Technical Challenge
+
+The main challenge is unifying professional relationship management, documents, invoices, opportunities, and AI-assisted content without losing traceability or turning the platform into a narrow CRM clone.
+
+The architecture addresses this by centering the domain model on the professional workspace and treating documents, generated content, and relationship context as first-class records.
+
+---
+
+## Engineering Lesson Learned
+
+AI assistance is more useful when it is connected to structured domain context and human review rather than isolated from the records it is meant to support.
+
+---
+
+## Platform Relationships
+
+- Can reuse Aletheia-inspired reasoning and evaluation concepts for AI-assisted professional workflows.
+- Can generate research questions around personal knowledge systems and document generation.
+- Can share documentation patterns with CDM for evidence, review, and traceability workflows.
+
+---
+
 ## Screenshots
 
 No public screenshots are included yet.
@@ -105,6 +151,14 @@ Medium-term:
 Long-term:
 
 - [Research] Prepare technical reports about personal professional knowledge systems and AI-assisted business operations.
+
+---
+
+## Related Research
+
+- Research index: [Research](../../research/)
+- Primary direction: personal professional knowledge systems, AI-assisted communication, document workflows, and human review
+- Future artifacts: technical reports, synthetic professional datasets, and controlled document-generation experiments
 
 ---
 
