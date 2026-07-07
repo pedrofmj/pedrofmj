@@ -1,6 +1,6 @@
 # Screenshots
 
-Placeholder for sanitized Emulare screenshots and diagrams.
+This directory is reserved for sanitized Emulare screenshots and diagrams.
 
 Suggested future files:
 

@@ -2,15 +2,15 @@
 
 [Back to Software Platforms](../)
 
-Aletheia is an AI and cognitive framework designed to structure reasoning, knowledge, and decision processes.
+Aletheia is an AI and cognitive framework for agent-based environments, multi-agent simulations, automation workflows, teaching libraries, and structured reasoning systems.
 
 ---
 
 ## Purpose
 
-Aletheia explores how software systems can model thought, organize knowledge, and support structured decision-making.
+Aletheia explores how software systems can model reasoning, operate environments, coordinate agents, and preserve knowledge across repeatable workflows.
 
-It is intended as a foundation for intelligent systems that need more than isolated prompts or disconnected automation.
+It is intended as a foundation for intelligent systems that need environment lifecycle management, scripting, evaluation, and human-facing workbenches instead of isolated prompts or disconnected automation.
 
 ---
 
@@ -34,13 +34,15 @@ Aletheia addresses the problem of turning fragmented knowledge and decision logi
 
 At a public level, Aletheia can be described through these layers:
 
-- Cognitive modeling layer for concepts, relationships, and reasoning structures
-- Knowledge organization layer for reusable domain information
-- Orchestration layer for connecting reasoning workflows to applications
-- Evaluation layer for reviewing decisions, outputs, and quality signals
-- Integration layer for connecting the framework with external systems
+- Matrix runtime for coordinating root servers, child servers, and environment handles
+- Environment lifecycle layer for creating, starting, pausing, resuming, stopping, and removing environments
+- Agent and action APIs for turn-based and real-time workflows
+- Administration layer for REST access, authentication, users, groups, and permissions
+- Persistence layer for runtime state, authorization, scripting, workspaces, and search corpora
+- Scripting layer for automation and experimentation
+- Desktop, web, and portal workbenches for human interaction
 
-This description is intentionally implementation-neutral.
+This description is intentionally implementation-neutral and avoids private source details.
 
 ---
 
@@ -48,12 +50,14 @@ This description is intentionally implementation-neutral.
 
 The platform is connected to these technology areas:
 
-- AI-assisted reasoning
-- Knowledge representation
-- Backend services and APIs
-- Structured data storage
-- Evaluation and validation workflows
-- Documentation-driven system design
+- Java 21 and Maven multi-module architecture
+- REST administration services
+- SQLite persistence
+- authentication and authorization workflows
+- JavaScript, Prolog, Python, Lisp, and Common Lisp scripting
+- Swing desktop interfaces
+- Vaadin web interfaces and portal workflows
+- AI, game simulation, text search, and environment tooling
 
 ---
 
@@ -61,9 +65,9 @@ The platform is connected to these technology areas:
 
 Key engineering decisions include:
 
-- separating reasoning models from application-specific workflows
+- separating environment and reasoning models from application-specific workflows
 - keeping knowledge structures explicit and reviewable
-- designing for extension instead of one-off AI features
+- designing for extension across environments, tools, scripts, and workbenches
 - emphasizing traceability between inputs, reasoning, and outcomes
 - supporting experimentation without binding the platform to a single domain
 
@@ -76,7 +80,7 @@ Tradeoffs considered:
 
 ## Screenshots
 
-Screenshots are placeholders for now.
+No public screenshots are included yet.
 
 Future images should be sanitized and added under [screenshots](screenshots/).
 
@@ -87,7 +91,7 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 Near-term:
 
 - [Engineering quality] Formalize the core cognitive model and document stable concepts.
-- [Product evolution] Document example reasoning workflows that can be reused across domains.
+- [Product evolution] Document example agent, environment, scripting, and reasoning workflows that can be reused across domains.
 
 Medium-term:
 

@@ -1,6 +1,6 @@
 # Screenshots
 
-Placeholder for sanitized Aletheia screenshots and diagrams.
+This directory is reserved for sanitized Aletheia screenshots and diagrams.
 
 Suggested future files:
 

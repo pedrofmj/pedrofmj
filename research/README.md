@@ -41,9 +41,9 @@ For example:
 
 - Emulare can support research on hardware emulation and integration testing.
 - Aletheia can support research on cognitive modeling and AI-assisted reasoning.
-- EgypTeam POS can support research on transaction reliability and device integration.
-- CDM can support research on operational data quality and validation.
-- Testing Control Center can support research on test observability and reproducibility.
+- EgypTeam Via can support research on commercial transaction state, sale lifecycle validation, and payment composition.
+- EgypTeam POS can support research on professional knowledge management, document workflows, and AI-assisted business operations.
+- CDM can support research on field measurement quality, evidence-backed validation, and offline synchronization.
 
 Future papers should link back to the platform that motivated them, and platform pages should link forward to related research outputs.
 
@@ -51,7 +51,7 @@ Future papers should link back to the platform that motivated them, and platform
 
 ## Publication Status
 
-This section currently contains placeholders and documentation structure.
+This section currently contains the initial documentation structure and will receive publishable artifacts over time.
 
 Papers, reports, datasets, and experiments will be added over time as the work matures and can be published safely.
 

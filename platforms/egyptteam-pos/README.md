@@ -2,35 +2,35 @@
 
 [Back to Software Platforms](../)
 
-EgypTeam POS is a point-of-sale platform for commercial workflows that require reliability, device integration, and operational consistency.
+EgypTeam POS is a Professional Operating System for independent professionals, consultants, contractors, and technical leaders who manage clients, contacts, opportunities, engagements, documents, invoices, and professional knowledge.
 
 ---
 
 ## Purpose
 
-EgypTeam POS supports sales operations where checkout flow, product information, pricing, devices, payments, and reporting must work together.
+EgypTeam POS centralizes professional operations that are usually scattered across CRMs, invoicing tools, resume files, notes, spreadsheets, and communication history.
 
-The public documentation focuses on the engineering and architectural aspects of the platform.
+It is designed around the professional user, not around a sales pipeline or a single business function.
 
 ---
 
 ## Motivation
 
-Point-of-sale systems operate in environments where software failures quickly become business failures.
+Independent professionals often need to preserve business context across clients, interviews, engagements, invoices, proposals, resumes, and follow-up communication.
 
-They must be reliable, understandable, auditable, and capable of interacting with external devices and business systems.
+When this context is fragmented, decision-making, communication, billing, and opportunity tracking become harder to maintain over time.
 
-EgypTeam POS exists to support this kind of operational reliability.
+EgypTeam POS exists to make that professional operating context structured, searchable, reusable, and AI-assisted.
 
 ---
 
 ## Business Problem
 
-Commercial operations need consistent sales processing, device communication, data integrity, and reporting.
+Professionals who manage multiple relationships and engagements need reliable continuity across business development, delivery, documentation, and invoicing.
 
-Disconnected systems or fragile integrations can create downtime, reconciliation problems, and poor user experience.
+Traditional tools usually solve only one part of that workflow. The result is duplicated information, lost context, inconsistent documents, and weak traceability between relationships, opportunities, work, and payments.
 
-EgypTeam POS addresses these issues through a structured platform approach.
+EgypTeam POS addresses this by organizing the professional workspace as an integrated platform.
 
 ---
 
@@ -38,14 +38,15 @@ EgypTeam POS addresses these issues through a structured platform approach.
 
 At a public level, EgypTeam POS can be described through these components:
 
-- Sales and checkout domain layer
-- Product, price, and configuration data layer
-- Device integration layer
-- External integration interfaces
-- Reporting and operational visibility
-- Audit and transaction traceability
+- Professional workspace and storage layer
+- Domain model for organizations, people, opportunities, engagements, and documents
+- Document and invoice generation workflows
+- AI assistance layer for communication, summaries, resume variants, and knowledge retrieval
+- Web application interface
+- Authentication and session management
+- Testable service layer for core business operations
 
-Fiscal, payment, and customer-specific details are intentionally not documented here.
+Private data, customer-specific records, and internal storage details are intentionally not documented here.
 
 ---
 
@@ -53,12 +54,14 @@ Fiscal, payment, and customer-specific details are intentionally not documented 
 
 The platform is connected to these technology areas:
 
-- backend services
-- desktop or web application interfaces
-- relational databases
-- device communication
-- integration APIs
-- reporting and diagnostics
+- Java 21 backend services
+- Maven-based build and packaging
+- lightweight HTTP APIs
+- JSON processing and structured document storage
+- SQLite-backed workspace persistence
+- browser-based user interface
+- automated unit and service testing
+- container-oriented deployment workflows
 
 ---
 
@@ -66,22 +69,22 @@ The platform is connected to these technology areas:
 
 Key engineering decisions include:
 
-- prioritizing transaction integrity
-- isolating device communication from business workflows
-- supporting diagnostics for operational support
-- keeping audit trails visible and reviewable
-- designing the platform for long-term maintainability
+- designing around the professional user instead of a traditional CRM pipeline
+- keeping core business entities language-neutral
+- treating documents, invoices, notes, and generated content as first-class records
+- making AI assistance part of the platform workflow rather than an external add-on
+- preserving professional knowledge so it can be searched, reviewed, and reused
 
 Tradeoffs considered:
 
-- prioritizing transaction integrity and diagnostics over exposing vendor-specific or fiscal implementation details
-- isolating device boundaries even when that adds architectural complexity
+- prioritizing a unified professional workspace over narrow single-purpose tools
+- keeping generated content reviewable instead of treating AI output as an opaque final answer
 
 ---
 
 ## Screenshots
 
-Screenshots are placeholders for now.
+No public screenshots are included yet.
 
 Future images should be sanitized and added under [screenshots](screenshots/).
 
@@ -91,17 +94,17 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 
 Near-term:
 
-- [Engineering quality] Expand public architecture diagrams for checkout, integration, and traceability boundaries.
-- [Engineering quality] Document sanitized device integration patterns.
+- [Engineering quality] Document the public domain model for organizations, people, opportunities, engagements, and documents.
+- [Product evolution] Improve document and invoice workflow documentation with sanitized examples.
 
 Medium-term:
 
-- [Engineering quality] Improve testing strategy documentation for transaction-heavy workflows.
-- [Product evolution] Connect POS workflows with Emulare test scenarios.
+- [Product evolution] Expand AI-assisted workflows for professional communication, resume variants, and knowledge retrieval.
+- [Engineering quality] Strengthen test coverage around workspace persistence, authentication, and document generation.
 
 Long-term:
 
-- [Research] Prepare technical reports about reliability, transaction integrity, and integration design.
+- [Research] Prepare technical reports about personal professional knowledge systems and AI-assisted business operations.
 
 ---
 
@@ -109,25 +112,25 @@ Long-term:
 
 Possible future publications:
 
-- Reliability patterns in point-of-sale software architecture
-- Device integration boundaries in commercial systems
-- Testing strategies for transaction-heavy retail platforms
+- Architecture patterns for personal professional operating systems
+- AI-assisted professional knowledge management and document generation
+- User-centered business platforms for independent technical professionals
 
 Possible experiments:
 
-- Measure defect detection using emulated POS devices
-- Compare transaction recovery strategies under simulated failures
-- Evaluate checkout workflow consistency across usage scenarios
+- Compare manual professional-context retrieval with structured workspace retrieval
+- Evaluate consistency of AI-assisted communication drafts across professional scenarios
+- Measure review effort for generated resume, invoice, and proposal artifacts
 
 Possible technical reports:
 
 - EgypTeam POS architecture overview
-- POS device integration strategy
-- Transaction integrity and auditability model
+- Professional workspace domain model
+- AI-assisted document and communication workflow strategy
 
 Possible datasets:
 
-- synthetic checkout scenarios
-- anonymized device failure categories
-- public transaction-flow examples
+- synthetic professional relationship records
+- synthetic opportunity and engagement histories
+- public document-generation scenario catalogs
 

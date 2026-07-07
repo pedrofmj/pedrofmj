@@ -1,6 +1,6 @@
 # Screenshots
 
-Placeholder for sanitized CDM screenshots and diagrams.
+This directory is reserved for sanitized CDM screenshots and diagrams.
 
 Suggested future files:
 

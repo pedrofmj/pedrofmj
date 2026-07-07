@@ -26,8 +26,8 @@ Status markers:
 
 For each platform under `platforms/`, complete the same documentation review:
 
-- [?] Confirm the purpose is accurate and understandable to someone without repository access.
-- [?] Rewrite the motivation using real business context that is safe to publish.
+- [x] Confirm the purpose is accurate and understandable to someone without repository access.
+- [x] Rewrite the motivation using real business context that is safe to publish.
 - [x] Describe the business problem without exposing customers, contracts, credentials, or private workflows.
 - [x] Expand the architecture overview with high-level diagrams or structured explanations.
 - [x] List technologies at category level, avoiding private infrastructure details.
@@ -39,14 +39,13 @@ For each platform under `platforms/`, complete the same documentation review:
 - [x] Connect each roadmap item to either product evolution, engineering quality, or research potential.
 - [x] Verify that no proprietary source code, private schema, customer data, credentials, or internal endpoints are included.
 
-Platforms to complete:
+Platform pages reviewed against local repositories:
 
-- [?] Aletheia
-- [?] Emulare
-- [?] EgypTeam Via
-- [?] EgypTeam POS
-- [?] CDM
-- [?] Testing Control Center
+- [x] Aletheia
+- [x] Emulare
+- [x] EgypTeam Via
+- [x] EgypTeam POS
+- [x] CDM
 
 ---
 
@@ -56,7 +55,7 @@ Platforms to complete:
 - [ ] Add one public-safe usage scenario per platform.
 - [ ] Add one technical challenge per platform and explain how the architecture addresses it.
 - [ ] Add one reliability, scalability, maintainability, or testing lesson learned per platform.
-- [ ] Add relationships between platforms where relevant, such as EgypTeam POS using Emulare for device testing.
+- [ ] Add relationships between platforms where relevant, such as EgypTeam Via using Emulare for commercial-device workflow testing.
 - [ ] Add a common platform documentation template for future platforms.
 - [ ] Add naming conventions for future platform folders.
 - [ ] Add a short privacy and confidentiality note to the platform index.

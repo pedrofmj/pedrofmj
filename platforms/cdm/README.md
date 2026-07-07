@@ -2,35 +2,35 @@
 
 [Back to Software Platforms](../)
 
-CDM is documented here as a data management platform focused on consistency, validation, and operational reliability.
+CDM is a water measurement system for collecting, synchronizing, managing, and analyzing meter readings in residential and condominium environments.
 
 ---
 
 ## Purpose
 
-CDM supports the organization, validation, and governance of data that other systems depend on.
+CDM supports field collection of water readings, API-based synchronization, administrative review, reporting, and export workflows.
 
-It is positioned as a platform for improving data quality, integration confidence, and operational consistency.
+It is designed to improve the reliability of measurement collection while preserving evidence, batch history, and operational visibility.
 
 ---
 
 ## Motivation
 
-Software platforms are only as reliable as the data they use.
+Water measurement work depends on accurate field input, repeatable collection flows, local resilience, image evidence, and reliable synchronization.
 
-When data is duplicated, inconsistent, poorly validated, or difficult to audit, every downstream process becomes harder to trust.
+Manual collection or disconnected spreadsheets make it harder to audit readings, verify evidence, generate reports, and track collection progress.
 
-CDM exists to treat data management as a central engineering concern.
+CDM exists to make field measurement workflows structured, traceable, and easier to validate.
 
 ---
 
 ## Business Problem
 
-Businesses need dependable data across operational systems, reports, integrations, and decision processes.
+Residential and condominium operations need dependable meter readings for billing, analysis, dispute resolution, and historical tracking.
 
-Fragmented data creates manual correction work, reporting errors, integration failures, and poor confidence in system behavior.
+When readings, photos, devices, units, and reports are disconnected, teams lose confidence in the measurement process and spend more time reconciling data manually.
 
-CDM addresses these problems through structure, validation, and traceability.
+CDM addresses these problems through mobile collection, batch synchronization, administrative review, evidence handling, and exportable reports.
 
 ---
 
@@ -38,14 +38,14 @@ CDM addresses these problems through structure, validation, and traceability.
 
 At a public level, CDM can be described through these components:
 
-- Data ingestion layer
-- Validation and normalization workflows
-- Central data model
-- Integration services
-- Reporting and data quality visibility
-- Audit and traceability mechanisms
+- Mobile field collection application
+- Offline-first local reading storage
+- API layer for synchronization and measurement management
+- Domain model for units, devices, batches, readings, metadata, and images
+- Administrative dashboard for review, filtering, reporting, and export
+- API documentation layer for integration and validation
 
-The documentation avoids private schemas, customer data, and proprietary business rules.
+The documentation avoids private customer data, credentials, deployment details, and proprietary business rules.
 
 ---
 
@@ -53,12 +53,14 @@ The documentation avoids private schemas, customer data, and proprietary busines
 
 The platform is connected to these technology areas:
 
-- relational databases
-- data validation
-- integration APIs
-- batch and scheduled processing
-- reporting workflows
-- observability and audit trails
+- Flutter mobile application development
+- Laravel and PHP backend services
+- React, Inertia.js, and TailwindCSS web interfaces
+- MySQL relational storage
+- Swagger and OpenAPI documentation
+- image capture and file handling
+- Excel, CSV, PDF, XML, and JSON exports
+- automated API and feature testing
 
 ---
 
@@ -66,22 +68,22 @@ The platform is connected to these technology areas:
 
 Key engineering decisions include:
 
-- treating data quality as part of platform architecture
-- making validation rules explicit and reviewable
-- designing imports and updates to be repeatable
-- preserving traceability across data changes
-- supporting future analytical and research use cases
+- supporting offline-first field collection
+- grouping readings into batches for controlled synchronization
+- preserving image evidence alongside measurement records
+- keeping measurement units, devices, readings, and batches explicit in the domain model
+- providing multiple export formats for operational and reporting needs
 
 Tradeoffs considered:
 
-- prioritizing explicit validation over hidden correction logic
-- discussing data quality patterns without exposing private schemas or operational records
+- prioritizing field reliability over always-online assumptions
+- accepting additional storage and review complexity to preserve image evidence
 
 ---
 
 ## Screenshots
 
-Screenshots are placeholders for now.
+No public screenshots are included yet.
 
 Future images should be sanitized and added under [screenshots](screenshots/).
 
@@ -91,17 +93,17 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 
 Near-term:
 
-- [Engineering quality] Document public data quality concepts and validation boundaries.
-- [Engineering quality] Add sanitized diagrams of data flow and governance responsibilities.
+- [Engineering quality] Add sanitized diagrams for mobile collection, synchronization, and dashboard review flows.
+- [Product evolution] Document public-safe examples of measurement batches, image evidence, and export workflows.
 
 Medium-term:
 
-- [Research] Define measurable data reliability indicators.
-- [Product evolution] Connect platform behavior to reporting and operational improvement workflows.
+- [Product evolution] Expand role-based access and operational review workflows.
+- [Research] Define measurement quality indicators for field collection, synchronization, and reporting accuracy.
 
 Long-term:
 
-- [Research] Prepare technical reports about validation, traceability, and data governance.
+- [Research] Evaluate OCR-assisted reading recognition and evidence-backed measurement validation.
 
 ---
 
@@ -109,25 +111,25 @@ Long-term:
 
 Possible future publications:
 
-- Data quality architecture for operational software platforms
-- Traceability models for business-critical data systems
-- Validation strategies for integrated enterprise data
+- Offline-first field collection architectures for residential utility measurements
+- Evidence-backed data quality models for meter reading systems
+- Human-in-the-loop OCR validation for operational measurement workflows
 
 Possible experiments:
 
-- Measure error reduction after validation standardization
-- Evaluate data consistency across integration scenarios
-- Compare manual and automated data correction workflows
+- Compare manual entry and OCR-assisted reading recognition
+- Measure synchronization reliability under intermittent connectivity
+- Evaluate the effect of image evidence on reading review and dispute resolution
 
 Possible technical reports:
 
 - CDM architecture overview
-- Data validation and traceability model
-- Operational data quality strategy
+- Water measurement batch synchronization model
+- Evidence-backed reporting and export strategy
 
 Possible datasets:
 
-- synthetic data quality cases
-- anonymized validation error categories
-- public data normalization examples
+- synthetic water meter reading scenarios
+- anonymized measurement validation categories
+- public OCR benchmark samples for meter-style digits
 

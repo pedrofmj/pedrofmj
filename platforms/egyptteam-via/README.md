@@ -2,35 +2,35 @@
 
 [Back to Software Platforms](../)
 
-EgypTeam Via is documented here as a platform for operational workflows, traceability, and business process coordination.
+EgypTeam Via is a corporate commercial platform centered on Via Appia, with current public-safe documentation focused on dynamic sales-cart behavior and commercial transaction workflows.
 
 ---
 
 ## Purpose
 
-EgypTeam Via supports the organization of business activities that depend on process visibility, execution control, and integration with operational data.
+EgypTeam Via supports commercial operations where catalog selection, active sale state, item quantities, payment entries, discounts, change, and sale closing rules must remain consistent.
 
-The public documentation keeps the focus on platform purpose and architecture, not private business rules.
+The public documentation keeps the focus on platform purpose and architecture, not private business rules or customer-specific deployment details.
 
 ---
 
 ## Motivation
 
-Operational work often happens across people, systems, locations, devices, and business constraints.
+Commercial workflows often require careful handling of mutable sales state before a transaction is finalized.
 
-Without a structured platform, these flows can become difficult to monitor, audit, improve, and scale.
+A cart can change repeatedly as items are added, quantities are adjusted, payments are split, discounts are applied, and totals are recalculated.
 
-EgypTeam Via exists to make operational execution more visible and manageable.
+EgypTeam Via exists to make that operational flow explicit, testable, and available through more than one interaction model.
 
 ---
 
 ## Business Problem
 
-Businesses need reliable coordination between planning, execution, status tracking, and reporting.
+Businesses need reliable handling of commercial transactions before final closure.
 
-Manual processes or disconnected tools can create delays, inconsistent data, and poor visibility.
+If cart state, payment state, discounts, remaining value, and change are not coordinated consistently, operators can face reconciliation errors and unclear transaction outcomes.
 
-EgypTeam Via addresses these coordination and traceability problems at the platform level.
+EgypTeam Via addresses this by structuring the sale lifecycle around current operator sessions, catalog operations, payment composition, recalculation, and controlled closing behavior.
 
 ---
 
@@ -38,14 +38,14 @@ EgypTeam Via addresses these coordination and traceability problems at the platf
 
 At a public level, EgypTeam Via can be described through these components:
 
-- Workflow and process layer
-- Operational data layer
-- User-facing interfaces
-- Integration services
-- Reporting and visibility tools
-- Audit and traceability mechanisms
+- Commercial domain layer for catalog items, sale state, item quantities, payments, discounts, and change
+- Web application interface for day-to-day commercial interaction
+- Command-line interface for scripted or operational access
+- API and service layer for sale lifecycle operations
+- Persistence layer for application state and commercial records
+- Health and deployment readiness layer for operational validation
 
-Specific business rules and internal implementation details are intentionally excluded.
+Specific business rules, deployment endpoints, and internal implementation details are intentionally excluded.
 
 ---
 
@@ -53,12 +53,14 @@ Specific business rules and internal implementation details are intentionally ex
 
 The platform is connected to these technology areas:
 
-- backend services
-- web and mobile interfaces
-- relational data storage
-- API integrations
-- reporting workflows
-- operational monitoring
+- Java 21 backend development
+- Spring Boot web applications
+- Spring Data JPA persistence
+- Thymeleaf server-rendered interfaces
+- relational database development
+- command-line operational tooling
+- container and Kubernetes-oriented deployment workflows
+- automated application testing
 
 ---
 
@@ -66,22 +68,22 @@ The platform is connected to these technology areas:
 
 Key engineering decisions include:
 
-- designing workflows around traceability and auditability
-- keeping integration boundaries explicit
-- separating business process concerns from presentation concerns
-- supporting future expansion across operational domains
-- documenting platform behavior in a way that can support research later
+- modeling one active sale per operator session
+- merging repeated catalog selections through quantity changes
+- recalculating totals after every item or payment mutation
+- supporting multiple payment entries and controlled closing outcomes
+- exposing the same commercial behavior through web and CLI interfaces
 
 Tradeoffs considered:
 
-- prioritizing traceability and auditability over undocumented workflow shortcuts
-- using generalized process language instead of private business terminology
+- prioritizing explicit sale lifecycle rules over hidden cart mutation behavior
+- keeping public documentation focused on domain patterns instead of private operational details
 
 ---
 
 ## Screenshots
 
-Screenshots are placeholders for now.
+No public screenshots are included yet.
 
 Future images should be sanitized and added under [screenshots](screenshots/).
 
@@ -91,17 +93,17 @@ Future images should be sanitized and added under [screenshots](screenshots/).
 
 Near-term:
 
-- [Product evolution] Expand public documentation as non-sensitive details become available.
-- [Engineering quality] Improve platform-level architecture diagrams for workflow and integration boundaries.
+- [Engineering quality] Add sanitized diagrams for sale lifecycle, cart mutation, payment composition, and closing outcomes.
+- [Product evolution] Expand public documentation for catalog, sale state, and operator-session workflows.
 
 Medium-term:
 
-- [Research] Map core operational workflows to future technical reports.
-- [Engineering quality] Identify measurable operational quality indicators.
+- [Engineering quality] Improve automated scenario coverage for cart operations, payment entries, discounts, and change.
+- [Research] Define correctness indicators for mutable commercial transaction state.
 
 Long-term:
 
-- [Research] Connect sanitized operational patterns to experiments about traceability and process visibility.
+- [Research] Prepare technical reports about sale lifecycle modeling and commercial workflow validation.
 
 ---
 
@@ -109,25 +111,25 @@ Long-term:
 
 Possible future publications:
 
-- Traceability models for operational workflow platforms
-- Architecture patterns for coordinating distributed business processes
-- Measuring process visibility in integrated software platforms
+- State-machine modeling for mutable commercial transaction workflows
+- Correctness patterns for sale lifecycle and payment composition systems
+- Testing strategies for catalog-driven commercial applications
 
 Possible experiments:
 
-- Compare workflow execution before and after platform standardization
-- Evaluate auditability across different process models
-- Measure data consistency in integrated operational workflows
+- Evaluate transaction-state consistency across repeated cart mutations
+- Compare web-driven and command-line-driven commercial workflows
+- Measure defect detection across scripted sale lifecycle scenarios
 
 Possible technical reports:
 
 - EgypTeam Via architecture overview
-- Operational traceability model
-- Process visibility and reporting strategy
+- Dynamic sales-cart lifecycle model
+- Payment composition and closing-rule validation strategy
 
 Possible datasets:
 
-- synthetic workflow execution records
-- anonymized process status transitions
-- public process-model examples
+- synthetic sale lifecycle scenarios
+- public catalog and payment-composition examples
+- anonymized transaction-state validation categories
 

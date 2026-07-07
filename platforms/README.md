@@ -10,12 +10,11 @@ The goal is to explain what each platform is, why it exists, what business probl
 
 | Platform | Focus | Documentation |
 | --- | --- | --- |
-| Aletheia | AI, cognition, reasoning, and knowledge organization | [Open](aletheia/) |
+| Aletheia | Agent environments, cognitive modeling, scripting, and AI-assisted reasoning | [Open](aletheia/) |
 | Emulare | Hardware and device emulation for testing and integration | [Open](emulare/) |
-| EgypTeam Via | Operational workflows, traceability, and business process coordination | [Open](egyptteam-via/) |
-| EgypTeam POS | Point-of-sale operations, device integration, and commercial workflows | [Open](egyptteam-pos/) |
-| CDM | Data management, validation, and operational consistency | [Open](cdm/) |
-| Testing Control Center | Testing governance, execution visibility, and quality control | [Open](testing-control-center/) |
+| EgypTeam Via | Commercial workflows, dynamic sales-cart lifecycle, and payment-state consistency | [Open](egyptteam-via/) |
+| EgypTeam POS | Professional operating system for clients, opportunities, documents, invoices, and AI-assisted workflows | [Open](egyptteam-pos/) |
+| CDM | Water measurement collection, batch synchronization, evidence, and reporting | [Open](cdm/) |
 
 ---
 
@@ -29,7 +28,7 @@ Each platform page follows the same structure:
 - Architecture overview
 - Technologies
 - Engineering decisions
-- Screenshots placeholder
+- Screenshots and visual assets
 - Future roadmap
 - Research opportunities
 

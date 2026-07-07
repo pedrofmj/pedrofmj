@@ -1,6 +1,6 @@
 # Screenshots
 
-Placeholder for sanitized EgypTeam Via screenshots and diagrams.
+This directory is reserved for sanitized EgypTeam Via screenshots and diagrams.
 
 Suggested future files:
 

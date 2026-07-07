@@ -1,6 +1,6 @@
 # Screenshots
 
-Placeholder for sanitized EgypTeam POS screenshots and diagrams.
+This directory is reserved for sanitized EgypTeam POS screenshots and diagrams.
 
 Suggested future files:
 

@@ -38,14 +38,14 @@ Emulare reduces dependency on physical hardware during development, testing, and
 
 At a public level, Emulare can be described through these components:
 
-- Device behavior models
-- Protocol profiles
-- Communication adapters
-- Scenario configuration
-- Logging and diagnostics
-- Test integration interfaces
+- Core device and bus abstractions
+- Serial communication layer
+- Business-device emulator modules
+- Desktop GUI for interacting with virtual devices
+- All-in-one packaging for local execution
+- Logging, diagnostics, and test-support utilities
 
-The platform is documented without exposing proprietary protocol implementations.
+The platform is documented without exposing proprietary protocol implementations or customer-specific device behavior.
 
 ---
 
@@ -53,12 +53,14 @@ The platform is documented without exposing proprietary protocol implementations
 
 The platform is connected to these technology areas:
 
-- serial communication
-- device protocols
-- simulator and emulator design
-- desktop and backend tooling
-- automated testing support
+- Java 21 and Maven multi-module builds
+- serial communication libraries
+- Swing desktop interfaces
+- modular emulator architecture
+- virtual serial-port workflows
+- device protocol modeling
 - logging and diagnostics
+- automated testing support
 
 ---
 
@@ -81,7 +83,7 @@ Tradeoffs considered:
 
 ## Screenshots
 
-Screenshots are placeholders for now.
+No public screenshots are included yet.
 
 Future images should be sanitized and added under [screenshots](screenshots/).
 
@@ -101,7 +103,7 @@ Medium-term:
 
 Long-term:
 
-- [Research] Prepare public technical reports about emulator-based testing and simulation fidelity.
+- [Research] Prepare public technical reports about emulator-based testing, virtual serial workflows, and simulation fidelity.
 
 ---
 

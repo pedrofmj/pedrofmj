@@ -88,12 +88,11 @@ This repository now includes public, high-level documentation for software platf
 
 The goal is to explain purpose, motivation, business problem, architecture direction, engineering decisions, roadmap, and research opportunities without exposing proprietary source code.
 
-- [Aletheia](platforms/aletheia/) - AI, cognition, reasoning, and knowledge organization
+- [Aletheia](platforms/aletheia/) - agent environments, cognitive modeling, scripting, and AI-assisted reasoning
 - [Emulare](platforms/emulare/) - hardware and device emulation for testing and integration
-- [EgypTeam Via](platforms/egyptteam-via/) - operational workflows, traceability, and business process coordination
-- [EgypTeam POS](platforms/egyptteam-pos/) - point-of-sale operations, device integration, and commercial workflows
-- [CDM](platforms/cdm/) - data management, validation, and operational consistency
-- [Testing Control Center](platforms/testing-control-center/) - testing governance, execution visibility, and quality control
+- [EgypTeam Via](platforms/egyptteam-via/) - commercial workflows, dynamic sales-cart lifecycle, and payment-state consistency
+- [EgypTeam POS](platforms/egyptteam-pos/) - professional operating system for clients, opportunities, documents, invoices, and AI-assisted workflows
+- [CDM](platforms/cdm/) - water measurement collection, batch synchronization, evidence, and reporting
 
 Start here: [Software Platforms](platforms/)
 
