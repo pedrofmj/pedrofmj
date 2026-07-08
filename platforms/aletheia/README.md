@@ -131,9 +131,15 @@ Sanitized production screenshots are available under [screenshots](screenshots/)
 - [Public release page](screenshots/01-public-soon.png)
 - [Portal access request form](screenshots/02-register-request-access.png)
 - [Access request submitted](screenshots/03-register-submitted.png)
-- [Aletheia Web Workbench sign-in](screenshots/08-aletheia-web-ui-login.png)
+- [Portal sign-in](screenshots/04-portal-sign-in.png)
+- [Approved user dashboard](screenshots/06-dashboard.png)
+- [Marketplace](screenshots/07-marketplace.png)
+- [Installed applications](screenshots/08-applications-installed.png)
+- [Console handoff to Aletheia Web UI](screenshots/09-aletheia-web-ui-console-handoff.png)
+- [Matrix workbench](screenshots/10-aletheia-matrix-workbench.png)
+- [Text search workspace](screenshots/11-aletheia-text-search.png)
 
-The full portal-to-workbench capture requires an approved production demo account or a production portal administrator so the portal can approve the user, grant the module, provision the dedicated Matrix root, and generate the Web UI handoff.
+The screenshots use a synthetic production demo account with an isolated Matrix root and contain no proprietary source code, customer data, credentials, or raw tokens.
 
 ---
 
