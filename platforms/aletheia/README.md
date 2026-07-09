@@ -126,32 +126,22 @@ AI-oriented systems become easier to evaluate when reasoning, environment state,
 
 ## Screenshots
 
-Sanitized production screenshots are available under [screenshots](screenshots/):
+Sanitized production screenshots are available under [screenshots](screenshots/). They are also shown inline below so the product flow can be reviewed without opening each file individually.
 
-- [Public release page](screenshots/01-public-soon.png)
-- [Portal access request form](screenshots/02-register-request-access.png)
-- [Access request submitted](screenshots/03-register-submitted.png)
-- [Portal sign-in](screenshots/04-portal-sign-in.png)
-- [Approved user dashboard](screenshots/06-dashboard.png)
-- [Marketplace](screenshots/07-marketplace.png)
-- [Installed applications](screenshots/08-applications-installed.png)
-- [Console handoff to Aletheia Web UI](screenshots/09-aletheia-web-ui-console-handoff.png)
-- [Matrix workbench](screenshots/10-aletheia-matrix-workbench.png)
-- [Text search workspace](screenshots/11-aletheia-text-search.png)
-- [Tic-Tac-Toe remote game server setup](screenshots/12-tictactoe-game-server-dialog.png)
-- [Tic-Tac-Toe remote game server created](screenshots/13-tictactoe-game-server-created.png)
-- [Human Tic-Tac-Toe remote client](screenshots/14-tictactoe-human-client-opened.png)
-- [Alpha-beta JavaScript scripted core agent selection](screenshots/15-tictactoe-scripted-agent-selection.png)
-- [Alpha-beta scripted agent joined](screenshots/16-tictactoe-scripted-agent-joined.png)
-- [Human move 1](screenshots/17-tictactoe-human-move-1.png)
-- [Alpha-beta response 1](screenshots/18-tictactoe-alpha-beta-response-1.png)
-- [Human move 2](screenshots/19-tictactoe-human-move-2.png)
-- [Alpha-beta response 2](screenshots/20-tictactoe-alpha-beta-response-2.png)
-- [Human move 3](screenshots/21-tictactoe-human-move-3.png)
-- [Alpha-beta response 3](screenshots/22-tictactoe-alpha-beta-response-3.png)
-- [Human move 4](screenshots/23-tictactoe-human-move-4.png)
-- [Alpha-beta response 4](screenshots/24-tictactoe-alpha-beta-response-4.png)
-- [Human final move and match result](screenshots/25-tictactoe-human-final-move.png)
+| Portal and Workbench | Remote Game and Scripted Agent |
+| --- | --- |
+| <a href="screenshots/01-public-soon.png"><img src="screenshots/01-public-soon.png" alt="Public release page" width="420"></a><br><sub>Public release page</sub> | <a href="screenshots/02-register-request-access.png"><img src="screenshots/02-register-request-access.png" alt="Portal access request form" width="420"></a><br><sub>Portal access request form</sub> |
+| <a href="screenshots/03-register-submitted.png"><img src="screenshots/03-register-submitted.png" alt="Access request submitted" width="420"></a><br><sub>Access request submitted</sub> | <a href="screenshots/04-portal-sign-in.png"><img src="screenshots/04-portal-sign-in.png" alt="Portal sign-in" width="420"></a><br><sub>Portal sign-in</sub> |
+| <a href="screenshots/06-dashboard.png"><img src="screenshots/06-dashboard.png" alt="Approved user dashboard" width="420"></a><br><sub>Approved user dashboard</sub> | <a href="screenshots/07-marketplace.png"><img src="screenshots/07-marketplace.png" alt="Aletheia marketplace" width="420"></a><br><sub>Aletheia marketplace</sub> |
+| <a href="screenshots/08-applications-installed.png"><img src="screenshots/08-applications-installed.png" alt="Installed applications" width="420"></a><br><sub>Installed applications</sub> | <a href="screenshots/09-aletheia-web-ui-console-handoff.png"><img src="screenshots/09-aletheia-web-ui-console-handoff.png" alt="Console handoff to Aletheia Web UI" width="420"></a><br><sub>Console handoff to Aletheia Web UI</sub> |
+| <a href="screenshots/10-aletheia-matrix-workbench.png"><img src="screenshots/10-aletheia-matrix-workbench.png" alt="Matrix workbench" width="420"></a><br><sub>Matrix workbench</sub> | <a href="screenshots/11-aletheia-text-search.png"><img src="screenshots/11-aletheia-text-search.png" alt="Text search workspace" width="420"></a><br><sub>Text search workspace</sub> |
+| <a href="screenshots/12-tictactoe-game-server-dialog.png"><img src="screenshots/12-tictactoe-game-server-dialog.png" alt="Tic-Tac-Toe remote game server setup" width="420"></a><br><sub>Tic-Tac-Toe remote game server setup</sub> | <a href="screenshots/13-tictactoe-game-server-created.png"><img src="screenshots/13-tictactoe-game-server-created.png" alt="Tic-Tac-Toe remote game server created" width="420"></a><br><sub>Tic-Tac-Toe remote game server created</sub> |
+| <a href="screenshots/14-tictactoe-human-client-opened.png"><img src="screenshots/14-tictactoe-human-client-opened.png" alt="Human Tic-Tac-Toe remote client" width="420"></a><br><sub>Human Tic-Tac-Toe remote client</sub> | <a href="screenshots/15-tictactoe-scripted-agent-selection.png"><img src="screenshots/15-tictactoe-scripted-agent-selection.png" alt="Alpha-beta JavaScript scripted core agent selection" width="420"></a><br><sub>Alpha-beta JavaScript scripted core agent selection</sub> |
+| <a href="screenshots/16-tictactoe-scripted-agent-joined.png"><img src="screenshots/16-tictactoe-scripted-agent-joined.png" alt="Alpha-beta scripted agent joined" width="420"></a><br><sub>Alpha-beta scripted agent joined</sub> | <a href="screenshots/17-tictactoe-human-move-1.png"><img src="screenshots/17-tictactoe-human-move-1.png" alt="Human move 1" width="420"></a><br><sub>Human move 1</sub> |
+| <a href="screenshots/18-tictactoe-alpha-beta-response-1.png"><img src="screenshots/18-tictactoe-alpha-beta-response-1.png" alt="Alpha-beta response 1" width="420"></a><br><sub>Alpha-beta response 1</sub> | <a href="screenshots/19-tictactoe-human-move-2.png"><img src="screenshots/19-tictactoe-human-move-2.png" alt="Human move 2" width="420"></a><br><sub>Human move 2</sub> |
+| <a href="screenshots/20-tictactoe-alpha-beta-response-2.png"><img src="screenshots/20-tictactoe-alpha-beta-response-2.png" alt="Alpha-beta response 2" width="420"></a><br><sub>Alpha-beta response 2</sub> | <a href="screenshots/21-tictactoe-human-move-3.png"><img src="screenshots/21-tictactoe-human-move-3.png" alt="Human move 3" width="420"></a><br><sub>Human move 3</sub> |
+| <a href="screenshots/22-tictactoe-alpha-beta-response-3.png"><img src="screenshots/22-tictactoe-alpha-beta-response-3.png" alt="Alpha-beta response 3" width="420"></a><br><sub>Alpha-beta response 3</sub> | <a href="screenshots/23-tictactoe-human-move-4.png"><img src="screenshots/23-tictactoe-human-move-4.png" alt="Human move 4" width="420"></a><br><sub>Human move 4</sub> |
+| <a href="screenshots/24-tictactoe-alpha-beta-response-4.png"><img src="screenshots/24-tictactoe-alpha-beta-response-4.png" alt="Alpha-beta response 4" width="420"></a><br><sub>Alpha-beta response 4</sub> | <a href="screenshots/25-tictactoe-human-final-move.png"><img src="screenshots/25-tictactoe-human-final-move.png" alt="Human final move and match result" width="420"></a><br><sub>Human final move and match result</sub> |
 
 The screenshots use a synthetic production demo account with an isolated Matrix root and contain no proprietary source code, customer data, credentials, or raw tokens.
 
