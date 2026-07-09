@@ -373,13 +373,30 @@ async function createRemoteTicTacToeGameServer(page) {
       return labels.some((label) => label.includes('game port')) && String(field.value || input?.value || '').trim().length > 0;
     });
   }, 10000);
+  const port = 9400 + Math.floor(Math.random() * 500);
+  await page.typeDialogVaadinField('Game Port', String(port));
   await page.screenshot('12-tictactoe-game-server-dialog.png');
   await page.clickDialogButton('Create');
-  await page.waitForIdle(12000);
   await page.waitFor(() => {
-    const text = document.body?.innerText || '';
-    return /ENV-[A-Z0-9]+[^\n]*TICTACTOE/i.test(text) || /tictactoe\s*\(NDJSON/i.test(text);
-  }, 180000);
+    const visible = (element) => {
+      const style = window.getComputedStyle(element);
+      const rect = element.getBoundingClientRect();
+      return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+    };
+    const deepQueryAll = (root, selector) => {
+      const out = [...root.querySelectorAll(selector)];
+      for (const element of root.querySelectorAll('*')) {
+        if (element.shadowRoot) out.push(...deepQueryAll(element.shadowRoot, selector));
+      }
+      return out;
+    };
+    return !deepQueryAll(document, 'vaadin-dialog-overlay, vaadin-dialog')
+      .filter(visible)
+      .some((dialog) => /New Game Server/i.test(dialog.textContent || ''));
+  }, 30000);
+  await page.waitForIdle(6000);
+  await page.clickText('button, vaadin-button', 'Refresh');
+  await page.waitForIdle(5000);
   await page.screenshot('13-tictactoe-game-server-created.png');
 }
 
@@ -425,11 +442,11 @@ async function playHumanVsAlphaBetaTicTacToe(page) {
   ];
   const captured = new Set();
 
-  let state = await page.waitForTicTacToeHumanState((candidate) => candidate.canMove || candidate.terminal, 120000);
+  let state = await page.waitForTicTacToeHumanState((candidate) => candidate.terminal || candidate.legalMoves.length > 0, 120000);
   for (let turn = 0; turn < humanScreenshots.length; turn++) {
     if (state.terminal) break;
-    if (!state.canMove) {
-      state = await page.waitForTicTacToeHumanState((candidate) => candidate.canMove || candidate.terminal, 120000);
+    if (!state.legalMoves.length) {
+      state = await page.waitForTicTacToeHumanState((candidate) => candidate.terminal || candidate.legalMoves.length > 0, 120000);
       if (state.terminal) break;
     }
 
@@ -749,6 +766,51 @@ class BrowserPage {
     return true;
   }
 
+  async typeDialogVaadinField(label, value) {
+    const result = await this.evaluate(({ label, value }) => {
+      const normalize = (item) => String(item || '').replace(/\s+/g, ' ').trim().toLowerCase();
+      const visible = (element) => {
+        const style = window.getComputedStyle(element);
+        const rect = element.getBoundingClientRect();
+        return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+      };
+      const deepQueryAll = (root, selector) => {
+        const out = [...root.querySelectorAll(selector)];
+        for (const element of root.querySelectorAll('*')) {
+          if (element.shadowRoot) out.push(...deepQueryAll(element.shadowRoot, selector));
+        }
+        return out;
+      };
+      const dialogs = deepQueryAll(document, 'vaadin-dialog-overlay, vaadin-dialog').filter(visible);
+      const scope = dialogs[dialogs.length - 1] || document;
+      const fields = deepQueryAll(scope, 'vaadin-text-field, vaadin-password-field, vaadin-text-area, vaadin-integer-field, vaadin-number-field').filter(visible);
+      const target = normalize(label);
+      const field = fields.find((candidate) => {
+        const shadowLabel = candidate.shadowRoot?.querySelector('[part="label"]')?.textContent;
+        const labels = [candidate.label, candidate.getAttribute('label'), shadowLabel, candidate.textContent].filter(Boolean).map(normalize);
+        return labels.some((item) => item.includes(target));
+      });
+      if (!field) return { ok: false, labels: fields.map((candidate) => candidate.label || candidate.getAttribute('label') || '').slice(0, 20) };
+      const input = field.shadowRoot?.querySelector('input, textarea');
+      const next = String(value);
+      field.scrollIntoView({ block: 'center', inline: 'center' });
+      field.value = next;
+      if (input) {
+        input.focus();
+        input.value = next;
+        input.dispatchEvent(new InputEvent('input', { data: next, inputType: 'insertText', bubbles: true, composed: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+      }
+      field.dispatchEvent(new CustomEvent('value-changed', { detail: { value: next }, bubbles: true, composed: true }));
+      field.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
+      field.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+      return { ok: true, fieldValue: String(field.value || ''), inputValue: String(input?.value || '') };
+    }, { label, value });
+    if (!result.ok) throw new Error(`Could not find dialog field ${label}. Seen: ${JSON.stringify(result.labels || [])}`);
+    await this.waitForIdle(700);
+    return result;
+  }
+
   async clearSensitiveVaadinFields() {
     return this.evaluate(() => {
       const labels = ['bearer token', 'password'];
@@ -979,7 +1041,7 @@ class BrowserPage {
   }
 
   async clickDialogButton(text) {
-    const target = await this.evaluate((text) => {
+    const result = await this.evaluate((text) => {
       const normalize = (value) => String(value || '').replace(/\s+/g, ' ').trim().toLowerCase();
       const visible = (element) => {
         const style = window.getComputedStyle(element);
@@ -997,21 +1059,22 @@ class BrowserPage {
       const dialogs = deepQueryAll(document, 'vaadin-dialog-overlay, vaadin-dialog').filter(visible);
       const scope = dialogs[dialogs.length - 1] || document;
       const buttons = deepQueryAll(scope, 'button, vaadin-button').filter(visible);
-      const button = buttons.reverse().find((candidate) => normalize(candidate.textContent) === targetText)
+      const button = [...buttons].reverse().find((candidate) => normalize(candidate.textContent) === targetText)
         || buttons.find((candidate) => normalize(candidate.textContent).includes(targetText));
-      if (!button) return null;
-      const rect = button.getBoundingClientRect();
-      return {
-        x: rect.left + (rect.width / 2),
-        y: rect.top + (rect.height / 2),
-        text: button.textContent,
-      };
+      if (!button) {
+        return { clicked: false, seen: buttons.map((candidate) => normalize(candidate.textContent)).slice(0, 20) };
+      }
+      button.scrollIntoView({ block: 'center', inline: 'center' });
+      button.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, composed: true, cancelable: true, pointerId: 1, pointerType: 'mouse', isPrimary: true }));
+      button.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, composed: true, cancelable: true, view: window }));
+      button.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, composed: true, cancelable: true, pointerId: 1, pointerType: 'mouse', isPrimary: true }));
+      button.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, composed: true, cancelable: true, view: window }));
+      button.dispatchEvent(new MouseEvent('click', { bubbles: true, composed: true, cancelable: true, view: window }));
+      if (typeof button.click === 'function') button.click();
+      return { clicked: true, text: button.textContent };
     }, text);
-    if (!target) throw new Error(`Could not find dialog button ${text}`);
-    await this.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: target.x, y: target.y });
-    await this.send('Input.dispatchMouseEvent', { type: 'mousePressed', x: target.x, y: target.y, button: 'left', clickCount: 1 });
-    await this.send('Input.dispatchMouseEvent', { type: 'mouseReleased', x: target.x, y: target.y, button: 'left', clickCount: 1 });
-    await this.waitForIdle(2500);
+    if (!result.clicked) throw new Error(`Could not find dialog button ${text}. Seen: ${JSON.stringify(result.seen || [])}`);
+    await this.waitForIdle(3500);
   }
 
 
@@ -1021,11 +1084,14 @@ class BrowserPage {
         || frame.querySelector('.desktop-window-title')?.textContent
         || '';
       const textFor = (frame) => `${titleFor(frame)} ${frame.textContent || ''}`;
+      const isSummaryFrame = (frame) => /Remote Game Sessions/i.test(titleFor(frame));
+      const hasBoard = (frame) => !!frame.querySelector('.ttt-board, .ttt-cell, button[aria-label^="Play Tic-Tac-Toe"]');
       const frames = [...document.querySelectorAll('.desktop-window')];
-      const gameFrames = frames.filter((frame) => /Tic-Tac-Toe|tictactoe|NDJSON/i.test(textFor(frame)));
-      const human = gameFrames.find((frame) => /\[Human\]|X:\s*HUMAN|O:\s*HUMAN/i.test(textFor(frame)))
-        || gameFrames.find((frame) => frame.querySelector('button[aria-label^="Play Tic-Tac-Toe"]'));
-      const machine = gameFrames.find((frame) => /Alpha-Beta|Script Core|SCRIPTED|MACHINE/i.test(textFor(frame)) && frame !== human);
+      const gameFrames = frames.filter((frame) => !isSummaryFrame(frame)
+        && (/Tic-Tac-Toe|tictactoe|NDJSON/i.test(textFor(frame)) || hasBoard(frame)));
+      const human = gameFrames.find((frame) => hasBoard(frame) && /\[Human\]|X:\s*HUMAN|O:\s*HUMAN|Your turn/i.test(textFor(frame)))
+        || gameFrames.find((frame) => hasBoard(frame));
+      const machine = gameFrames.find((frame) => frame !== human && /Alpha-Beta|Script Core|SCRIPTED|MACHINE|X:\s*REMOTE|O:\s*MACHINE/i.test(textFor(frame)));
       const host = document.querySelector('.desktop-host');
       if (host) {
         host.scrollTo(0, 0);
@@ -1050,6 +1116,22 @@ class BrowserPage {
         return true;
       };
 
+      const centerBoard = (frame) => {
+        const body = frame?.querySelector('.desktop-window-body');
+        if (!body) return false;
+        const cells = [...frame.querySelectorAll('button[aria-label^="Play Tic-Tac-Toe at row"]')];
+        if (!cells.length) return false;
+        const bodyRect = body.getBoundingClientRect();
+        const cellRects = cells.map((cell) => cell.getBoundingClientRect());
+        const boardTop = Math.min(...cellRects.map((rect) => rect.top));
+        const boardBottom = Math.max(...cellRects.map((rect) => rect.bottom));
+        const boardHeight = boardBottom - boardTop;
+        const targetTop = bodyRect.top + Math.max(24, (bodyRect.height - boardHeight) / 2);
+        body.scrollTop = Math.max(0, body.scrollTop + boardTop - targetTop);
+        body.scrollLeft = 0;
+        return true;
+      };
+
       if (human && machine) {
         place(human, 24, 82, 660, 1040, 9000);
         place(machine, 704, 82, 660, 1040, 8999);
@@ -1058,6 +1140,9 @@ class BrowserPage {
       } else if (machine) {
         place(machine, 360, 82, 700, 1040, 9000);
       }
+
+      const humanBoardCentered = centerBoard(human);
+      const machineBoardCentered = centerBoard(machine);
 
       for (const frame of frames) {
         if (frame !== human && frame !== machine && /Matrix Servers|Text Search|Remote Game Sessions/i.test(titleFor(frame))) {
@@ -1069,6 +1154,8 @@ class BrowserPage {
         human: human ? titleFor(human) : '',
         machine: machine ? titleFor(machine) : '',
         gameWindowCount: gameFrames.length,
+        humanBoardCentered,
+        machineBoardCentered,
       };
     });
     await this.waitForIdle(1200);
@@ -1088,8 +1175,11 @@ class BrowserPage {
       const allFrames = [...document.querySelectorAll('.desktop-window')];
       const visibleFrames = allFrames.filter(visible);
       const frames = visibleFrames.length > 0 ? visibleFrames : allFrames;
-      const findFrame = () => frames.find((frame) => /Tic-Tac-Toe/i.test(titleFor(frame) + ' ' + frame.textContent) && /Human/i.test(titleFor(frame) + ' ' + frame.textContent))
-        || frames.find((frame) => frame.querySelector('button[aria-label^="Play Tic-Tac-Toe"]'));
+      const textFor = (frame) => `${titleFor(frame)} ${frame.textContent || ''}`;
+      const isSummaryFrame = (frame) => /Remote Game Sessions/i.test(titleFor(frame));
+      const hasBoard = (frame) => !!frame.querySelector('.ttt-board, .ttt-cell, button[aria-label^="Play Tic-Tac-Toe"]');
+      const findFrame = () => frames.find((frame) => !isSummaryFrame(frame) && hasBoard(frame) && /\[Human\]|X:\s*HUMAN|O:\s*HUMAN|Your turn/i.test(textFor(frame)))
+        || frames.find((frame) => !isSummaryFrame(frame) && hasBoard(frame));
       const frame = findFrame();
       if (!frame) {
         return { found: false, title: '', text: '', cells: [], legalMoves: [], canMove: false, terminal: false, humanMark: 'X' };
@@ -1101,11 +1191,26 @@ class BrowserPage {
         if (value.includes('O')) return 'O';
         return '';
       });
-      const legalMoves = [...frame.querySelectorAll('button[aria-label^="Play Tic-Tac-Toe at row"]')].map((button) => {
+      const buttonMoves = [...frame.querySelectorAll('button[aria-label^="Play Tic-Tac-Toe at row"]')].filter((button) => {
+        const style = window.getComputedStyle(button);
+        const rect = button.getBoundingClientRect();
+        return style.display !== 'none'
+          && style.visibility !== 'hidden'
+          && rect.width > 0
+          && rect.height > 0
+          && !button.disabled
+          && button.getAttribute('aria-disabled') !== 'true';
+      }).map((button) => {
         const label = button.getAttribute('aria-label') || '';
         const match = label.match(/row\s+(\d+),\s+column\s+(\d+)/i);
         return match ? { row: Number(match[1]) - 1, col: Number(match[2]) - 1 } : null;
       }).filter(Boolean);
+      const emptyMoves = cells
+        .map((cell, index) => (!cell ? { row: Math.floor(index / 3), col: index % 3 } : null))
+        .filter(Boolean);
+      const legalMoves = buttonMoves.length
+        ? buttonMoves.filter((move) => !cells[(move.row * 3) + move.col])
+        : emptyMoves;
       const humanMark = /X:\s*HUMAN/i.test(text) ? 'X' : (/O:\s*HUMAN/i.test(text) ? 'O' : 'X');
       const winnerMatch = text.match(/Winner:\s*(X|O|DRAW)/i);
       return {
@@ -1144,13 +1249,17 @@ class BrowserPage {
         || frame.querySelector('.desktop-window-title')?.textContent
         || '';
       const frames = [...document.querySelectorAll('.desktop-window')].filter(visible);
-      const frame = frames.find((candidate) => /Tic-Tac-Toe/i.test(titleFor(candidate) + ' ' + candidate.textContent) && /Human/i.test(titleFor(candidate) + ' ' + candidate.textContent))
-        || frames.find((candidate) => candidate.querySelector('button[aria-label^="Play Tic-Tac-Toe"]'));
+      const textFor = (frame) => `${titleFor(frame)} ${frame.textContent || ''}`;
+      const isSummaryFrame = (frame) => /Remote Game Sessions/i.test(titleFor(frame));
+      const hasBoard = (frame) => !!frame.querySelector('.ttt-board, .ttt-cell, button[aria-label^="Play Tic-Tac-Toe"]');
+      const frame = frames.find((candidate) => !isSummaryFrame(candidate) && hasBoard(candidate) && /\[Human\]|X:\s*HUMAN|O:\s*HUMAN|Your turn/i.test(textFor(candidate)))
+        || frames.find((candidate) => !isSummaryFrame(candidate) && hasBoard(candidate));
       if (!frame) return false;
       const label = `Play Tic-Tac-Toe at row ${row + 1}, column ${col + 1}`;
-      const button = [...frame.querySelectorAll('button[aria-label^="Play Tic-Tac-Toe at row"]')]
+      const button = [...frame.querySelectorAll('button[aria-label^="Play Tic-Tac-Toe at row"], .ttt-cell-legal[aria-label^="Play Tic-Tac-Toe at row"]')]
         .find((candidate) => candidate.getAttribute('aria-label') === label);
       if (!button) return false;
+      button.scrollIntoView({ block: 'center', inline: 'center' });
       button.click();
       return true;
     }, { row, col });

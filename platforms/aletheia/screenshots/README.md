@@ -15,5 +15,19 @@ Files:
 - `09-aletheia-web-ui-console-handoff.png` - Aletheia console handoff
 - `10-aletheia-matrix-workbench.png` - Matrix workbench
 - `11-aletheia-text-search.png` - Text search workspace
+- `12-tictactoe-game-server-dialog.png` - Tic-Tac-Toe remote game server setup
+- `13-tictactoe-game-server-created.png` - Tic-Tac-Toe remote game server created
+- `14-tictactoe-human-client-opened.png` - Human Tic-Tac-Toe remote client
+- `15-tictactoe-scripted-agent-selection.png` - Alpha-beta JavaScript scripted core agent selection
+- `16-tictactoe-scripted-agent-joined.png` - Alpha-beta scripted agent joined the match
+- `17-tictactoe-human-move-1.png` - Tic-Tac-Toe human move 1
+- `18-tictactoe-alpha-beta-response-1.png` - Tic-Tac-Toe alpha-beta response 1
+- `19-tictactoe-human-move-2.png` - Tic-Tac-Toe human move 2
+- `20-tictactoe-alpha-beta-response-2.png` - Tic-Tac-Toe alpha-beta response 2
+- `21-tictactoe-human-move-3.png` - Tic-Tac-Toe human move 3
+- `22-tictactoe-alpha-beta-response-3.png` - Tic-Tac-Toe alpha-beta response 3
+- `23-tictactoe-human-move-4.png` - Tic-Tac-Toe human move 4
+- `24-tictactoe-alpha-beta-response-4.png` - Tic-Tac-Toe alpha-beta response 4
+- `25-tictactoe-human-final-move.png` - Tic-Tac-Toe human final move and match result
 
 These images must not expose proprietary source code, private customer data, credentials, or production secrets.
