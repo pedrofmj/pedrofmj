@@ -49,6 +49,10 @@ const screenshots = [
   ['23-tictactoe-human-move-4.png', 'Tic-Tac-Toe human move 4'],
   ['24-tictactoe-alpha-beta-response-4.png', 'Tic-Tac-Toe alpha-beta response 4'],
   ['25-tictactoe-human-final-move.png', 'Tic-Tac-Toe human final move and match result'],
+  ['26-synthetic-head-neutral.png', 'Synthetic head monitor neutral expression'],
+  ['27-synthetic-head-happy-expression.png', 'Synthetic head happy expression'],
+  ['28-synthetic-head-surprised-expression.png', 'Synthetic head surprised expression'],
+  ['29-synthetic-head-focused-scene-controls.png', 'Synthetic head focused expression with scene controls'],
 ];
 
 class CdpClient {
@@ -340,6 +344,41 @@ async function captureAuthenticatedFlow(page) {
   await page.screenshot('11-aletheia-text-search.png');
 
   await captureTicTacToeMatch(page);
+  await captureSyntheticHeadDemo(page);
+}
+
+async function captureSyntheticHeadDemo(page) {
+  await page.send('Emulation.setDeviceMetricsOverride', {
+    width,
+    height: Math.max(height, 1250),
+    deviceScaleFactor: 1,
+    mobile: false,
+  });
+  await page.waitForTextAny(['Aletheia Workbench', 'Matrix ready'], 90000);
+  await page.clickByAriaLabel('Synthetic Head Monitor');
+  await page.waitForText('Synthetic Head Monitor', 45000);
+  await page.waitForIdle(2500);
+  await page.layoutSyntheticHeadWindow();
+  await page.screenshot('26-synthetic-head-neutral.png');
+
+  await page.setVaadinComboBoxOption('Expression', 'Happy');
+  await page.waitForIdle(1200);
+  await page.layoutSyntheticHeadWindow();
+  await page.screenshot('27-synthetic-head-happy-expression.png');
+
+  await page.setVaadinComboBoxOption('Expression', 'Surprised');
+  await page.waitForIdle(1200);
+  await page.layoutSyntheticHeadWindow();
+  await page.screenshot('28-synthetic-head-surprised-expression.png');
+
+  await page.setVaadinComboBoxOption('Expression', 'Focused');
+  await page.setVaadinField('Look Yaw', '24');
+  await page.setVaadinField('Look Pitch', '-10');
+  await page.setVaadinField('Zoom', '118');
+  await page.setVaadinField('Glow', '92');
+  await page.waitForIdle(1500);
+  await page.layoutSyntheticHeadWindow();
+  await page.screenshot('29-synthetic-head-focused-scene-controls.png');
 }
 
 async function captureTicTacToeMatch(page) {
@@ -1002,6 +1041,42 @@ class BrowserPage {
     await this.clickVaadinOverlayOption(optionText);
   }
 
+  async setVaadinComboBoxOption(label, optionText) {
+    const opened = await this.evaluate(({ label }) => {
+      const normalize = (value) => String(value || '').replace(/\s+/g, ' ').trim().toLowerCase();
+      const visible = (element) => {
+        const style = window.getComputedStyle(element);
+        const rect = element.getBoundingClientRect();
+        return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+      };
+      const deepQueryAll = (root, selector) => {
+        const out = [...root.querySelectorAll(selector)];
+        for (const element of root.querySelectorAll('*')) {
+          if (element.shadowRoot) out.push(...deepQueryAll(element.shadowRoot, selector));
+        }
+        return out;
+      };
+      const target = normalize(label);
+      const boxes = deepQueryAll(document, 'vaadin-combo-box').filter(visible);
+      const box = boxes.find((candidate) => {
+        const shadowLabel = candidate.shadowRoot?.querySelector('[part="label"]')?.textContent;
+        const labels = [candidate.label, candidate.getAttribute('label'), shadowLabel, candidate.textContent]
+          .filter(Boolean)
+          .map(normalize);
+        return labels.some((item) => item.includes(target));
+      });
+      if (!box) return { opened: false, labels: boxes.map((candidate) => candidate.label || candidate.getAttribute('label') || candidate.textContent).slice(0, 12) };
+      box.scrollIntoView({ block: 'center', inline: 'center' });
+      box.click();
+      const control = box.shadowRoot?.querySelector('[part="input-field"], input, button');
+      if (control) control.click();
+      return { opened: true, labels: [] };
+    }, { label });
+    if (!opened.opened) throw new Error(`Could not open Vaadin combo box ${label}. Seen labels: ${JSON.stringify(opened.labels)}`);
+    await this.waitForIdle(800);
+    await this.clickVaadinOverlayOption(optionText);
+  }
+
   async clickVaadinOverlayOption(optionText) {
     let lastOptions = [];
     for (let i = 0; i < 25; i++) {
@@ -1020,7 +1095,7 @@ class BrowserPage {
           return out;
         };
         const target = normalize(optionText).toLowerCase();
-        const items = deepQueryAll(document, 'vaadin-select-item, vaadin-item, [role="option"]')
+        const items = deepQueryAll(document, 'vaadin-select-item, vaadin-combo-box-item, vaadin-item, [role="option"]')
           .filter(visible)
           .filter((item) => normalize(item.textContent));
         const item = items.find((candidate) => normalize(candidate.textContent).toLowerCase().includes(target));
@@ -1077,6 +1152,42 @@ class BrowserPage {
     await this.waitForIdle(3500);
   }
 
+
+  async layoutSyntheticHeadWindow() {
+    const layout = await this.evaluate(() => {
+      const titleFor = (frame) => frame.querySelector('.desktop-window-title')?.getAttribute('title')
+        || frame.querySelector('.desktop-window-title')?.textContent
+        || '';
+      const frames = [...document.querySelectorAll('.desktop-window')];
+      const frame = frames.find((candidate) => /Synthetic Head Monitor/i.test(titleFor(candidate) + ' ' + (candidate.textContent || '')));
+      const host = document.querySelector('.desktop-host');
+      if (host) {
+        host.scrollTo(0, 0);
+        host.style.overflow = 'auto';
+      }
+      window.scrollTo(0, 0);
+      if (!frame) return { found: false };
+      frame.style.display = '';
+      frame.style.left = '80px';
+      frame.style.top = '76px';
+      frame.style.width = '1280px';
+      frame.style.height = '1080px';
+      frame.style.zIndex = '9200';
+      const body = frame.querySelector('.desktop-window-body');
+      if (body) {
+        body.style.overflow = 'auto';
+        body.scrollTop = 0;
+        body.scrollLeft = 0;
+      }
+      const monitor = frame.querySelector('.synthetic-head-monitor');
+      if (monitor) monitor.style.minHeight = '980px';
+      const screen = frame.querySelector('.synthetic-head-monitor svg');
+      return { found: true, title: titleFor(frame), hasSvg: !!screen };
+    });
+    if (!layout.found) throw new Error('Could not find Synthetic Head Monitor window.');
+    await this.waitForIdle(1000);
+    return layout;
+  }
 
   async layoutTicTacToeRemoteWindows() {
     const layout = await this.evaluate(() => {

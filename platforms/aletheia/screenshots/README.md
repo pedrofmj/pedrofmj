@@ -29,5 +29,9 @@ Files:
 - `23-tictactoe-human-move-4.png` - Tic-Tac-Toe human move 4
 - `24-tictactoe-alpha-beta-response-4.png` - Tic-Tac-Toe alpha-beta response 4
 - `25-tictactoe-human-final-move.png` - Tic-Tac-Toe human final move and match result
+- `26-synthetic-head-neutral.png` - Synthetic head monitor neutral expression
+- `27-synthetic-head-happy-expression.png` - Synthetic head happy expression
+- `28-synthetic-head-surprised-expression.png` - Synthetic head surprised expression
+- `29-synthetic-head-focused-scene-controls.png` - Synthetic head focused expression with scene controls
 
 These images must not expose proprietary source code, private customer data, credentials, or production secrets.
