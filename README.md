@@ -4,6 +4,10 @@ Software Engineer focused on building **backend systems, hardware integrations, 
 
 ---
 
+[![Anurag's GitHub stats](https://github-stats-extended.vercel.app/api?username=pedrofmj)](https://github.com/stats-organization/github-stats-extended)
+
+---
+
 ## 🧭 Navigation
 
 - [About Me](#-about-me)
