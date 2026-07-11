@@ -93,6 +93,7 @@ The goal is to explain purpose, motivation, business problem, architecture direc
 - [EgypTeam Via](platforms/egyptteam-via/) - commercial workflows, dynamic sales-cart lifecycle, and payment-state consistency
 - [EgypTeam POS](platforms/egyptteam-pos/) - professional operating system for clients, opportunities, documents, invoices, and AI-assisted workflows
 - [CDM](platforms/cdm/) - water measurement collection, batch synchronization, evidence, and reporting
+- [Echora](platforms/echora/) - DAW workspace, MIDI devices, audio playback, routing, and cross-surface music production
 
 Start here: [Software Platforms](platforms/)
 
@@ -181,6 +182,7 @@ A digital audio workstation and virtual desktop environment focused on complex a
 - Supports advanced audio workflows and integrated environments
 - Designed for performance, flexibility, and scalability
 - Combines concepts of DAW systems with distributed/virtualized infrastructure
+- Platform documentation: [Echora](platforms/echora/)
 
 > Echora represents the intersection of performance systems, audio engineering, and infrastructure design.
 
