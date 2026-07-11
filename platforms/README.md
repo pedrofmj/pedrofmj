@@ -17,6 +17,7 @@ Local platform repositories may be used as private reference material, but this 
 | EgypTeam Via | Active / commercial platform | Commercial workflows, dynamic sales-cart lifecycle, and payment-state consistency | [Open](egyptteam-via/) |
 | EgypTeam POS | Active / professional platform | Professional operating system for clients, opportunities, documents, invoices, and AI-assisted workflows | [Open](egyptteam-pos/) |
 | CDM | Active / applied platform | Water measurement collection, batch synchronization, evidence, and reporting | [Open](cdm/) |
+| Echora | Active / evolving platform | DAW workspace, MIDI devices, audio playback, routing, and cross-surface music production | [Open](echora/) |
 
 ---
 
@@ -87,4 +88,4 @@ They are written as professional portfolio documentation, architecture summaries
 - EgypTeam Via can generate research around commercial transaction state, payment composition, and sale lifecycle validation.
 - EgypTeam POS can generate research around personal professional knowledge systems and AI-assisted document workflows.
 - CDM can generate research around field measurement quality, evidence-backed validation, and offline synchronization.
-
+- Echora can contribute audio-device, live-performance, and cross-surface workspace research.
