@@ -41,7 +41,7 @@ Implement GitHub Actions pipelines for PR validation and deployment.
 
 | Task ID | Description | Owner | Status | Dependencies |
 |---------|-------------|-------|--------|--------------|
-| FUT-01 | Configure branch protection on main | @pedrofmj | 🔄 Blocked | Requires GitHub repository settings |
+| FUT-01 | Configure branch protection on main | @pedrofmj | ✅ Done | Solo-development mode: checks required, approval count 0 |
 | FUT-02 | Create PR pipeline workflow (.github/workflows/pr-pipeline.yml) | @pedrofmj | ✅ Done | Branch validation, content checks, secret scan |
 | FUT-03 | Create deployment pipeline workflow (.github/workflows/deployment-pipeline.yml) | @pedrofmj | ✅ Done | Safe placeholder; no deployment target exists |
 | FUT-04 | Add PR template (.github/pull_request_template.md) | @pedrofmj | ✅ Done | Installed |
@@ -50,13 +50,13 @@ Implement GitHub Actions pipelines for PR validation and deployment.
 | FUT-07 | Configure semantic release (.releaserc.json) | @pedrofmj | ✅ Done | GitHub release notes configured |
 
 ### Definition of Done (Sprint 2)
-- [ ] Cannot push directly to main (GitHub settings)
+- [x] Cannot push directly to main (GitHub settings)
 - [x] PR from feature/* runs PR pipeline
 - [x] PR from doc/* skips deployment pipeline
 - [x] Merge of feature/* triggers deployment pipeline check
 - [x] Branch prefix validation rejects invalid names
 - [x] Secret scanning is configured
-- [ ] Squash merge produces clean linear history (GitHub settings)
+- [x] Squash merge produces clean linear history (GitHub settings)
 
 ---
 
