@@ -61,6 +61,10 @@ For example:
 
 Future papers should link back to the platform that motivated them, and platform pages should link forward to related research outputs.
 
+## Initial Technical Report
+
+The first report, [Platform Architecture and Research Map](technical-reports/platform-architecture-and-research-map.md), connects the documented platforms to recurring research themes: explicit models, traceability, human review, local-first operation, integration, and technology governance.
+
 ---
 
 ## Publication Status
@@ -68,4 +72,3 @@ Future papers should link back to the platform that motivated them, and platform
 This section currently contains the initial documentation structure and will receive publishable artifacts over time.
 
 Papers, reports, datasets, and experiments will be added over time as the work matures and can be published safely.
-
