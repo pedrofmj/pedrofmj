@@ -69,7 +69,7 @@ These items were completed before formal backlog tracking was established.
 
 | ID | Title | Type | Priority | Description |
 |----|-------|------|----------|-------------|
-| FUT-08 | Add platform documentation for Aurum | docs | Medium | Create platforms/aurum/ with architecture |
+| FUT-08 | Add platform documentation for Aurum | docs | ✅ Done | Added `platforms/aurum/` and linked it from both platform indexes |
 | FUT-09 | Add platform documentation for Galaxy | docs | Medium | Create platforms/galaxy/ with architecture |
 | FUT-10 | Add platform documentation for EgypTeam Atlas | docs | Medium | Create platforms/egyptteam-atlas/ |
 | FUT-11 | Add platform documentation for EgypTeam Invoicing | docs | Medium | Create platforms/egyptteam-invoicing/ |

@@ -94,6 +94,7 @@ The goal is to explain purpose, motivation, business problem, architecture direc
 - [EgypTeam POS](platforms/egyptteam-pos/) - professional operating system for clients, opportunities, documents, invoices, and AI-assisted workflows
 - [CDM](platforms/cdm/) - water measurement collection, batch synchronization, evidence, and reporting
 - [Echora](platforms/echora/) - DAW workspace, MIDI devices, audio playback, routing, and cross-surface music production
+- [Aurum](platforms/aurum/) - financial management, account structures, ledger entries, and finance-data workspaces
 
 Start here: [Software Platforms](platforms/)
 
@@ -185,6 +186,19 @@ A digital audio workstation and virtual desktop environment focused on complex a
 - Platform documentation: [Echora](platforms/echora/)
 
 > Echora represents the intersection of performance systems, audio engineering, and infrastructure design.
+
+---
+
+### 💰 Aurum — Financial Management Platform
+A financial management platform focused on structured accounts, ledger entries, revenues, vendors, and controlled finance-data workspaces.
+
+- Separates finance domain concepts from API and Web applications
+- Supports persistent SQLite and ephemeral in-memory development modes
+- Preserves traceability across planned and realized financial entries
+- Designed for local-first operation with multiple future deployment strategies
+- Platform documentation: [Aurum](platforms/aurum/)
+
+> Aurum represents my interest in systems where correctness, traceability, and data boundaries are essential.
 
 ---
 
