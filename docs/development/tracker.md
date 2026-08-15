@@ -69,7 +69,7 @@ Add missing platform documentation for key systems.
 
 | Task ID | Description | Owner | Status | Priority |
 |---------|-------------|-------|--------|----------|
-| FUT-08 | Add Aurum platform documentation | @pedrofmj | ⏳ Planned | Medium |
+| FUT-08 | Add Aurum platform documentation | @pedrofmj | ✅ Done | Public architecture, relationships, roadmap, and research mapping |
 | FUT-09 | Add Galaxy platform documentation | @pedrofmj | ⏳ Planned | Medium |
 | FUT-10 | Add EgypTeam Atlas platform documentation | @pedrofmj | ⏳ Planned | Medium |
 | FUT-11 | Add EgypTeam Invoicing platform documentation | @pedrofmj | ⏳ Planned | Medium |
@@ -133,7 +133,7 @@ Populate research sections with actual content.
 
 | Metric | Current | Target | Trend |
 |--------|---------|--------|-------|
-| Platforms documented | 6/12 | 12/12 | ↗️ |
+| Platforms documented | 7/12 | 12/12 | ↗️ |
 | Research sections populated | 0/7 | 7/7 | → |
 | CI/CD pipelines configured | 2/2 | 2/2 | ↗️ |
 | Branch protection enabled | No | Yes | → |
