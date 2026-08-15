@@ -20,6 +20,7 @@ Local platform repositories may be used as private reference material, but this 
 | Echora | Active / evolving platform | DAW workspace, MIDI devices, audio playback, routing, and cross-surface music production | [Open](echora/) |
 | Aurum | Active / evolving platform | Financial management, account structures, ledger entries, and finance-data workspaces | [Open](aurum/) |
 | Galaxy | Active / operationally evolving | Local-first workstation management, device topology, audio, MIDI, runners, and remote desktop | [Open](galaxy/) |
+| EgypTeam Atlas | Active / evolving platform | Software lifecycle, deployment, diagnostics, automation, and operations governance | [Open](egypteam-atlas/) |
 
 ---
 
@@ -93,3 +94,4 @@ They are written as professional portfolio documentation, architecture summaries
 - Echora can contribute audio-device, live-performance, and cross-surface workspace research.
 - Aurum can contribute financial domain modeling, storage isolation, and traceability patterns to EgypTeam POS and future research.
 - Galaxy can contribute workstation topology, infrastructure operations, and device-integration patterns to Echora and future research.
+- EgypTeam Atlas can contribute lifecycle management, diagnostics, deployment evidence, and governance patterns across the platform portfolio.

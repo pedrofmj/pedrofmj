@@ -96,6 +96,7 @@ The goal is to explain purpose, motivation, business problem, architecture direc
 - [Echora](platforms/echora/) - DAW workspace, MIDI devices, audio playback, routing, and cross-surface music production
 - [Aurum](platforms/aurum/) - financial management, account structures, ledger entries, and finance-data workspaces
 - [Galaxy](platforms/galaxy/) - local-first workstation management, device topology, audio, MIDI, runners, and remote desktop
+- [EgypTeam Atlas](platforms/egypteam-atlas/) - software lifecycle, deployment, diagnostics, automation, and operations governance
 
 Start here: [Software Platforms](platforms/)
 
@@ -213,6 +214,19 @@ A local-first workstation manager for modeling devices, connections, hosts, serv
 - Platform documentation: [Galaxy](platforms/galaxy/)
 
 > Galaxy represents my interest in making complex physical and distributed workspaces explicit, inspectable, and operationally safe.
+
+---
+
+### 🗺️ EgypTeam Atlas — Software Lifecycle & Operations Platform
+A platform for mapping software assets, environments, deployments, diagnostics, automation, and governance through a unified workbench and CLI.
+
+- Separates generic lifecycle concepts from application-specific operations
+- Preserves diagnostics and inventory as inspectable operational artifacts
+- Supports human-facing workbench workflows and repeatable CLI operations
+- Designed for explicit project state, provider boundaries, and governance
+- Platform documentation: [EgypTeam Atlas](platforms/egypteam-atlas/)
+
+> Atlas represents my interest in making software operations traceable, repeatable, and understandable across environments.
 
 ---
 
