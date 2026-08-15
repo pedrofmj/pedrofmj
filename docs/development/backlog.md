@@ -101,6 +101,7 @@ These items were completed before formal backlog tracking was established.
 | RES-05 | Document EgypTeam POS workflow engine | research | Dynamic cart, payment state consistency |
 
 | RES-06 | Define cross-platform traceability dataset | research | Synthetic cases for context, evidence, review, and recovery experiments |
+| RES-07 | Define explicit-context traceability experiment | research | Paired synthetic protocol for review effort, recovery, and explanation quality |
 
 ---
 
