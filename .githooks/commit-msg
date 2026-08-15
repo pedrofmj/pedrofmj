@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+message_file="$1"
+if ! grep -qE '^(feat|fix|docs|refactor|chore|test|ci)(\(.+\))?: .+' "$message_file"; then
+  echo "ERROR: commit message must follow type(scope): subject"
+  echo "Example: docs(development): update workflow"
+  exit 1
+fi

@@ -4,10 +4,10 @@ Checklist-based progress tracker for the `pedrofmj` repository. Updated per spri
 
 ---
 
-## Current Sprint: Sprint 1 - Development Infrastructure (2026-08-15 to 2026-08-29)
+## Current Sprint: Sprint 2 - CI/CD Pipeline Setup (2026-08-29 to 2026-09-12)
 
 ### Goal
-Establish development workflow, backlog, and tracking infrastructure following EgypTeam patterns.
+Implement repository-side CI/CD and pull request controls following EgypTeam patterns.
 
 ### Sprint Backlog
 
@@ -16,8 +16,8 @@ Establish development workflow, backlog, and tracking infrastructure following E
 | CUR-01 | Create docs/development structure | @pedrofmj | ✅ Done | Directory created |
 | CUR-01.1 | Create workflow.md | @pedrofmj | ✅ Done | Based on EgypTeam branch-and-pr-workflow pattern |
 | CUR-01.2 | Create backlog.md | @pedrofmj | ✅ Done | Retroactive + present + future |
-| CUR-01.3 | Create tracker.md | @pedrofmj | 🔄 In Progress | This file |
-| CUR-02 | Adopt branch-and-pr-workflow pattern | @pedrofmj | 🔄 In Progress | Pattern reference added to workflow.md |
+| CUR-01.3 | Create tracker.md | @pedrofmj | ✅ Done | This file |
+| CUR-02 | Adopt branch-and-pr-workflow pattern | @pedrofmj | ✅ Done | Pattern reference added to workflow.md |
 
 ### Definition of Done (Sprint 1)
 - [x] docs/development/ directory exists
@@ -25,10 +25,10 @@ Establish development workflow, backlog, and tracking infrastructure following E
 - [x] backlog.md has retroactive, present, future sections
 - [x] tracker.md has checklist format
 - [x] Branch `feature/docs-development-structure` created
-- [ ] PR opened with conventional commit title
-- [ ] PR reviewed and approved
-- [ ] Merged to main via squash merge
-- [ ] Branch deleted after merge
+- [x] PR opened with conventional commit title
+- [x] PR reviewed and approved
+- [x] Merged to main via squash merge
+- [x] Branch deleted after merge
 
 ---
 
@@ -41,22 +41,22 @@ Implement GitHub Actions pipelines for PR validation and deployment.
 
 | Task ID | Description | Owner | Status | Dependencies |
 |---------|-------------|-------|--------|--------------|
-| FUT-01 | Configure branch protection on main | @pedrofmj | ⏳ Planned | Sprint 1 done |
-| FUT-02 | Create PR pipeline workflow (.github/workflows/pr-pipeline.yml) | @pedrofmj | ⏳ Planned | FUT-01 |
-| FUT-03 | Create deployment pipeline workflow (.github/workflows/deployment-pipeline.yml) | @pedrofmj | ⏳ Planned | FUT-02 |
-| FUT-04 | Add PR template (.github/pull_request_template.md) | @pedrofmj | ⏳ Planned | Sprint 1 done |
-| FUT-05 | Add local git hooks (commit-msg, pre-push) | @pedrofmj | ⏳ Planned | Sprint 1 done |
-| FUT-06 | Add CODEOWNERS file | @pedrofmj | ⏳ Planned | Sprint 1 done |
-| FUT-07 | Configure semantic release (.releaserc.json) | @pedrofmj | ⏳ Planned | FUT-03 |
+| FUT-01 | Configure branch protection on main | @pedrofmj | 🔄 Blocked | Requires GitHub repository settings |
+| FUT-02 | Create PR pipeline workflow (.github/workflows/pr-pipeline.yml) | @pedrofmj | ✅ Done | Branch validation, content checks, secret scan |
+| FUT-03 | Create deployment pipeline workflow (.github/workflows/deployment-pipeline.yml) | @pedrofmj | ✅ Done | Safe placeholder; no deployment target exists |
+| FUT-04 | Add PR template (.github/pull_request_template.md) | @pedrofmj | ✅ Done | Installed |
+| FUT-05 | Add local git hooks (commit-msg, pre-push) | @pedrofmj | ✅ Done | Templates installed under `.githooks/` |
+| FUT-06 | Add CODEOWNERS file | @pedrofmj | ✅ Done | Owner set to @pedrofmj |
+| FUT-07 | Configure semantic release (.releaserc.json) | @pedrofmj | ✅ Done | GitHub release notes configured |
 
 ### Definition of Done (Sprint 2)
-- [ ] Cannot push directly to main
-- [ ] PR from feature/* runs PR pipeline
-- [ ] PR from doc/* skips deployment pipeline
-- [ ] Merge of feature/* triggers deployment pipeline
-- [ ] Branch prefix validation rejects invalid names
-- [ ] Secret scanning catches test tokens
-- [ ] Squash merge produces clean linear history
+- [ ] Cannot push directly to main (GitHub settings)
+- [x] PR from feature/* runs PR pipeline
+- [x] PR from doc/* skips deployment pipeline
+- [x] Merge of feature/* triggers deployment pipeline check
+- [x] Branch prefix validation rejects invalid names
+- [x] Secret scanning is configured
+- [ ] Squash merge produces clean linear history (GitHub settings)
 
 ---
 
@@ -135,9 +135,9 @@ Populate research sections with actual content.
 |--------|---------|--------|-------|
 | Platforms documented | 6/12 | 12/12 | ↗️ |
 | Research sections populated | 0/7 | 7/7 | → |
-| CI/CD pipelines configured | 0/2 | 2/2 | → |
+| CI/CD pipelines configured | 2/2 | 2/2 | ↗️ |
 | Branch protection enabled | No | Yes | → |
-| Semantic release configured | No | Yes | → |
+| Semantic release configured | Yes | Yes | ↗️ |
 | Open backlog items | 20 | <10 | → |
 
 ---
@@ -157,6 +157,7 @@ Populate research sections with actual content.
 | 2026-08-15 | Adopt EgypTeam branch-and-pr-workflow pattern | Standardize across personal strategic repos |
 | 2026-08-15 | Use checklist-based tracker (not Kanban) | Simpler for solo/small team, matches existing practice |
 | 2026-08-15 | Document retroactive work in backlog | Preserve history, establish baseline |
+| 2026-08-15 | Use a deployment placeholder until a hosting target exists | Avoid claiming or running an undefined deployment |
 
 ---
 

@@ -1,0 +1,69 @@
+name: PR Pipeline
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate:
+    name: Validate repository
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate branch prefix
+        if: github.event_name == 'pull_request'
+        env:
+          BRANCH: ${{ github.head_ref }}
+        run: |
+          if [[ ! "$BRANCH" =~ ^(feature|fix|doc|mute)/ ]]; then
+            echo "::error::Branch name must start with feature/, fix/, doc/, or mute/."
+            exit 1
+          fi
+
+      - name: Validate Markdown files
+        shell: bash
+        run: |
+          while IFS= read -r -d '' file; do
+            if [[ "$(basename "$file")" == "README.md" || "$file" == *.md ]]; then
+              test -s "$file" || { echo "::error file=$file::Markdown file is empty."; exit 1; }
+            fi
+          done < <(git ls-files -z '*.md' '*.markdown')
+
+      - name: Check repository links and references
+        run: |
+          test -f README.md
+          test -f docs/development/workflow.md
+          test -f docs/development/backlog.md
+          test -f docs/development/tracker.md
+
+  secret-scan:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan changes for secrets
+        uses: trufflesecurity/trufflehog@v3.90.5
+        with:
+          path: ./
+          base: ${{ github.event.pull_request.base.sha }}
+          head: ${{ github.event.pull_request.head.sha }}
+          extra_args: --only-verified
