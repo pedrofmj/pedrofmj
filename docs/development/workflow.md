@@ -23,7 +23,7 @@ This document defines the Git branch and pull request workflow for the `pedrofmj
 1. **No direct commits to `main`.** Every change arrives via a merged PR.
 2. **Branch names:** `<prefix>/<kebab-case-description>`. Keep concise.
 3. **PR required:** Title = `type(scope): description` (conventional commits). Describe *why*, not just *what*.
-4. **Approval:** At least one review (self-approval OK for solo work). Squash merge. Delete branch after.
+4. **Approval:** External approval is required when collaborators are available. During the current solo-development phase, self-authored PRs may merge after required checks pass. Squash merge. Delete branch after.
 5. **Rebase:** Update from `main` before requesting review.
 6. **Secrets:** Never commit credentials, tokens, or private data.
 
@@ -119,16 +119,25 @@ The repository includes `.github/workflows/pr-pipeline.yml` for branch, content,
 
 `doc/*` and `mute/*` merges skip deployment.
 
+## Solo Development Mode
+
+Until collaborators are added, branch protection uses these rules:
+
+- Pull requests remain mandatory; direct pushes to `main` remain disabled.
+- Required CI checks, linear history, conversation resolution, and CODEOWNERS remain enabled.
+- Approval count is `0` so the repository owner can merge self-authored PRs after checks pass.
+- When a collaborator joins, restore `required_approving_review_count` to `1`.
+
 ## Verification Checklist
 
 After setup:
-- [ ] Cannot push directly to `main` (GitHub branch protection setting)
+- [x] Cannot push directly to `main` (GitHub branch protection setting)
 - [x] PR from `feature/xyz` runs PR pipeline
 - [x] PR from `doc/xyz` skips deployment pipeline
 - [x] Merge of `feature/xyz` triggers deployment pipeline check
 - [x] Branch prefix validation rejects invalid names
 - [x] Secret scanning is configured for same-repository PRs
-- [ ] Squash merge produces clean linear history (GitHub branch protection setting)
+- [x] Squash merge produces clean linear history (GitHub branch protection setting)
 - [x] PR template is installed
 - [x] CODEOWNERS is installed
 - [x] Local hook templates are installed
