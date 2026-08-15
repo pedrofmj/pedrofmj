@@ -75,7 +75,7 @@ These items were completed before formal backlog tracking was established.
 | FUT-11 | Add platform documentation for EgypTeam Invoicing | docs | 🔄 In Progress | Create platforms/egyptteam-invoicing/ |
 | FUT-12 | Add platform documentation for EgypTeam ADM | docs | 🔄 In Progress | Create platforms/egypteam-adm/ |
 | FUT-13 | Add research papers section content | docs | Medium | Populate research/papers/ with actual papers |
-| FUT-14 | Add technical reports content | docs | Medium | Populate research/technical-reports/ |
+| FUT-14 | Add technical reports content | docs | 🔄 In Progress | Added the initial cross-platform architecture and research map |
 | FUT-15 | Add whitepapers content | docs | Medium | Populate research/whitepapers/ |
 
 ### Long Term (Future)

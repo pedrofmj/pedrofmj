@@ -93,7 +93,7 @@ Populate research sections with actual content.
 | Task ID | Description | Owner | Status | Priority |
 |---------|-------------|-------|--------|----------|
 | FUT-13 | Add research papers content | @pedrofmj | ⏳ Planned | Medium |
-| FUT-14 | Add technical reports content | @pedrofmj | ⏳ Planned | Medium |
+| FUT-14 | Add technical reports content | @pedrofmj | 🔄 In Progress | Initial cross-platform architecture and research map |
 | FUT-15 | Add whitepapers content | @pedrofmj | ⏳ Planned | Medium |
 
 ---
