@@ -12,3 +12,8 @@ Possible topics include:
 - operational data quality
 - test observability
 
+## Whitepapers
+
+| Whitepaper | Focus |
+| --- | --- |
+| [Traceable Applied Software Systems](traceable-applied-software-systems.md) | Explicit context, proportional evidence, and human review |

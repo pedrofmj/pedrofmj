@@ -69,6 +69,8 @@ The first experiment protocol, [Explicit Context and Traceability](experiments/e
 
 Initial publication-safe figures are available in the [Figures](figures/) index.
 
+The first whitepaper, [Traceable Applied Software Systems](whitepapers/traceable-applied-software-systems.md), presents a practical position on explicit context, evidence, and human review.
+
 ---
 
 ## Publication Status
