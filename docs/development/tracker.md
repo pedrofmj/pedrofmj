@@ -93,7 +93,7 @@ Populate research sections with actual content.
 | Task ID | Description | Owner | Status | Priority |
 |---------|-------------|-------|--------|----------|
 | FUT-13 | Add research papers content | @pedrofmj | ⏳ Planned | Medium |
-| FUT-14 | Add technical reports content | @pedrofmj | 🔄 In Progress | Initial cross-platform architecture and research map |
+| FUT-14 | Add technical reports content | @pedrofmj | ✅ Done | Initial cross-platform architecture and research map |
 | FUT-15 | Add whitepapers content | @pedrofmj | ⏳ Planned | Medium |
 
 ---
@@ -134,7 +134,7 @@ Populate research sections with actual content.
 | Metric | Current | Target | Trend |
 |--------|---------|--------|-------|
 | Platforms documented | 7/12 | 12/12 | ↗️ |
-| Research sections populated | 0/7 | 7/7 | → |
+| Research sections populated | 2/7 | 7/7 | ↗️ |
 | CI/CD pipelines configured | 2/2 | 2/2 | ↗️ |
 | Branch protection enabled | No | Yes | → |
 | Semantic release configured | Yes | Yes | ↗️ |
