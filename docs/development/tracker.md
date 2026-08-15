@@ -70,7 +70,7 @@ Add missing platform documentation for key systems.
 | Task ID | Description | Owner | Status | Priority |
 |---------|-------------|-------|--------|----------|
 | FUT-08 | Add Aurum platform documentation | @pedrofmj | ✅ Done | Public architecture, relationships, roadmap, and research mapping |
-| FUT-09 | Add Galaxy platform documentation | @pedrofmj | ⏳ Planned | Medium |
+| FUT-09 | Add Galaxy platform documentation | @pedrofmj | 🔄 In Progress | Public architecture, relationships, roadmap, and research mapping |
 | FUT-10 | Add EgypTeam Atlas platform documentation | @pedrofmj | ⏳ Planned | Medium |
 | FUT-11 | Add EgypTeam Invoicing platform documentation | @pedrofmj | ⏳ Planned | Medium |
 | FUT-12 | Add EgypTeam ADM platform documentation | @pedrofmj | ⏳ Planned | Medium |

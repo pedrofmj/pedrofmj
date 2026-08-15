@@ -95,6 +95,7 @@ The goal is to explain purpose, motivation, business problem, architecture direc
 - [CDM](platforms/cdm/) - water measurement collection, batch synchronization, evidence, and reporting
 - [Echora](platforms/echora/) - DAW workspace, MIDI devices, audio playback, routing, and cross-surface music production
 - [Aurum](platforms/aurum/) - financial management, account structures, ledger entries, and finance-data workspaces
+- [Galaxy](platforms/galaxy/) - local-first workstation management, device topology, audio, MIDI, runners, and remote desktop
 
 Start here: [Software Platforms](platforms/)
 
@@ -199,6 +200,19 @@ A financial management platform focused on structured accounts, ledger entries, 
 - Platform documentation: [Aurum](platforms/aurum/)
 
 > Aurum represents my interest in systems where correctness, traceability, and data boundaries are essential.
+
+---
+
+### 🌌 Galaxy — Workstation Manager
+A local-first workstation manager for modeling devices, connections, hosts, services, audio, MIDI, development machines, and remote desktop workflows.
+
+- Separates reusable device models from physical workstation records
+- Maps video, input, audio, and MIDI relationships
+- Provides matched desktop and browser workbenches
+- Includes controlled operational workflows with read-only support
+- Platform documentation: [Galaxy](platforms/galaxy/)
+
+> Galaxy represents my interest in making complex physical and distributed workspaces explicit, inspectable, and operationally safe.
 
 ---
 
