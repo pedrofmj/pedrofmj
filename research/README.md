@@ -67,6 +67,8 @@ The first report, [Platform Architecture and Research Map](technical-reports/pla
 
 The first experiment protocol, [Explicit Context and Traceability](experiments/explicit-context-traceability/), defines a synthetic paired study for measuring review effort, recovery steps, and explanation quality.
 
+Initial publication-safe figures are available in the [Figures](figures/) index.
+
 ---
 
 ## Publication Status

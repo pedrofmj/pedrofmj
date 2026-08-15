@@ -12,3 +12,9 @@ Figures may include:
 
 Figures should be publication-safe and free of proprietary information.
 
+## Initial Figures
+
+| Figure | Purpose |
+| --- | --- |
+| [Platform Research Map](platform-research-map.md) | Connects documented platforms to the research program |
+| [Traceability Experiment Model](traceability-experiment-model.md) | Visualizes the paired synthetic experiment protocol |
