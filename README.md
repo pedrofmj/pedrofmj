@@ -98,6 +98,7 @@ The goal is to explain purpose, motivation, business problem, architecture direc
 - [Galaxy](platforms/galaxy/) - local-first workstation management, device topology, audio, MIDI, runners, and remote desktop
 - [EgypTeam Atlas](platforms/egypteam-atlas/) - software lifecycle, deployment, diagnostics, automation, and operations governance
 - [EgypTeam Invoicing](platforms/egyptteam-invoicing/) - invoice calculation, structured input processing, and SVG/PDF document generation
+- [EgypTeam ADM](platforms/egypteam-adm/) - software inventory, technical governance, ownership mapping, risks, and transition planning
 
 Start here: [Software Platforms](platforms/)
 
@@ -241,6 +242,19 @@ A focused Java platform for generating consistent invoices from structured entri
 - Platform documentation: [EgypTeam Invoicing](platforms/egyptteam-invoicing/)
 
 > EgypTeam Invoicing represents my interest in deterministic automation where calculation, provenance, and generated artifacts must remain reviewable.
+
+---
+
+### 🧭 EgypTeam ADM — Technology Governance Workspace
+A software portfolio and technical governance workspace for inventory, ownership, risks, roadmaps, and technology transitions.
+
+- Connects repository knowledge with product narratives and technical profiles
+- Records gaps, risks, decisions, ownership, and action registers
+- Supports technical leadership, handoffs, and roadmap planning
+- Keeps confirmed facts distinct from analysis and unknowns
+- Platform documentation: [EgypTeam ADM](platforms/egypteam-adm/)
+
+> EgypTeam ADM represents my interest in turning broad technical context into clear ownership, decisions, and durable engineering strategy.
 
 ---
 
