@@ -15,3 +15,8 @@ Each experiment should include:
 
 Experiments should use public, synthetic, or properly anonymized data only.
 
+## Experiment Protocols
+
+| Experiment | Focus | Status |
+| --- | --- | --- |
+| [Explicit Context and Traceability](explicit-context-traceability/) | Compare explicit context and preserved evidence with implicit context | Protocol specification |

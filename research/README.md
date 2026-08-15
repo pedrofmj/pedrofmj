@@ -65,6 +65,8 @@ Future papers should link back to the platform that motivated them, and platform
 
 The first report, [Platform Architecture and Research Map](technical-reports/platform-architecture-and-research-map.md), connects the documented platforms to recurring research themes: explicit models, traceability, human review, local-first operation, integration, and technology governance.
 
+The first experiment protocol, [Explicit Context and Traceability](experiments/explicit-context-traceability/), defines a synthetic paired study for measuring review effort, recovery steps, and explanation quality.
+
 ---
 
 ## Publication Status
