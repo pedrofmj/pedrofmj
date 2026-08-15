@@ -103,6 +103,7 @@ These items were completed before formal backlog tracking was established.
 | RES-06 | Define cross-platform traceability dataset | research | Synthetic cases for context, evidence, review, and recovery experiments |
 | RES-07 | Define explicit-context traceability experiment | research | Paired synthetic protocol for review effort, recovery, and explanation quality |
 | RES-08 | Create initial research figures | research | Publication-safe platform map and traceability experiment model |
+| RES-09 | Draft traceable applied systems whitepaper | research | Position paper on explicit context, evidence, and human review |
 
 ---
 
