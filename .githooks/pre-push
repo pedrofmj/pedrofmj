@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+branch="$(git symbolic-ref --short HEAD)"
+if [[ "$branch" != "main" && ! "$branch" =~ ^(feature|fix|doc|mute)/ ]]; then
+  echo "ERROR: branch '$branch' must start with feature/, fix/, doc/, or mute/"
+  exit 1
+fi

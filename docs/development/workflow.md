@@ -78,6 +78,12 @@ Brief explanation of **why** this change is needed (not just what).
 
 ## Local Git Hooks (Recommended)
 
+Hook templates are versioned under `.githooks/`. Enable them locally with:
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ### commit-msg hook
 Enforce conventional commit format:
 ```bash
@@ -101,7 +107,9 @@ if [[ "$BRANCH" != "main" && ! "$BRANCH" =~ ^(feature|fix|doc|mute)/ ]]; then
 fi
 ```
 
-## Pipeline Vision (Future)
+## Pipeline Implementation
+
+The repository includes `.github/workflows/pr-pipeline.yml` for branch, content, and secret validation. It also includes `.github/workflows/deployment-pipeline.yml`; because this is a documentation portfolio with no hosting target, that workflow verifies deployment impact and stops at a staging placeholder.
 
 ### PR Pipeline (on PR creation/update)
 - Lint → Test → Validate (secrets, branch naming) → Report
@@ -114,13 +122,17 @@ fi
 ## Verification Checklist
 
 After setup:
-- [ ] Cannot push directly to `main`
-- [ ] PR from `feature/xyz` runs PR pipeline
-- [ ] PR from `doc/xyz` skips deployment pipeline
-- [ ] Merge of `feature/xyz` triggers deployment pipeline
-- [ ] Branch prefix validation rejects invalid names
-- [ ] Secret scanning catches test tokens
-- [ ] Squash merge produces clean linear history
+- [ ] Cannot push directly to `main` (GitHub branch protection setting)
+- [x] PR from `feature/xyz` runs PR pipeline
+- [x] PR from `doc/xyz` skips deployment pipeline
+- [x] Merge of `feature/xyz` triggers deployment pipeline check
+- [x] Branch prefix validation rejects invalid names
+- [x] Secret scanning is configured for same-repository PRs
+- [ ] Squash merge produces clean linear history (GitHub branch protection setting)
+- [x] PR template is installed
+- [x] CODEOWNERS is installed
+- [x] Local hook templates are installed
+- [x] Semantic-release configuration is installed
 
 ## Adoption Log
 
