@@ -72,7 +72,7 @@ Add missing platform documentation for key systems.
 | FUT-08 | Add Aurum platform documentation | @pedrofmj | ✅ Done | Public architecture, relationships, roadmap, and research mapping |
 | FUT-09 | Add Galaxy platform documentation | @pedrofmj | 🔄 In Progress | Public architecture, relationships, roadmap, and research mapping |
 | FUT-10 | Add EgypTeam Atlas platform documentation | @pedrofmj | 🔄 In Progress | Public architecture, relationships, roadmap, and research mapping |
-| FUT-11 | Add EgypTeam Invoicing platform documentation | @pedrofmj | ⏳ Planned | Medium |
+| FUT-11 | Add EgypTeam Invoicing platform documentation | @pedrofmj | 🔄 In Progress | Public architecture, relationships, roadmap, and research mapping |
 | FUT-12 | Add EgypTeam ADM platform documentation | @pedrofmj | ⏳ Planned | Medium |
 
 ### Definition of Done (Sprint 3)
