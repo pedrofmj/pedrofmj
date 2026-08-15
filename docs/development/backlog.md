@@ -100,6 +100,8 @@ These items were completed before formal backlog tracking was established.
 | RES-04 | Document CDM water measurement data models | research | Batch sync, evidence, reporting |
 | RES-05 | Document EgypTeam POS workflow engine | research | Dynamic cart, payment state consistency |
 
+| RES-06 | Define cross-platform traceability dataset | research | Synthetic cases for context, evidence, review, and recovery experiments |
+
 ---
 
 ## Backlog Maintenance
