@@ -97,6 +97,7 @@ The goal is to explain purpose, motivation, business problem, architecture direc
 - [Aurum](platforms/aurum/) - financial management, account structures, ledger entries, and finance-data workspaces
 - [Galaxy](platforms/galaxy/) - local-first workstation management, device topology, audio, MIDI, runners, and remote desktop
 - [EgypTeam Atlas](platforms/egypteam-atlas/) - software lifecycle, deployment, diagnostics, automation, and operations governance
+- [EgypTeam Invoicing](platforms/egyptteam-invoicing/) - invoice calculation, structured input processing, and SVG/PDF document generation
 
 Start here: [Software Platforms](platforms/)
 
@@ -227,6 +228,19 @@ A platform for mapping software assets, environments, deployments, diagnostics, 
 - Platform documentation: [EgypTeam Atlas](platforms/egypteam-atlas/)
 
 > Atlas represents my interest in making software operations traceable, repeatable, and understandable across environments.
+
+---
+
+### 🧾 EgypTeam Invoicing — Document Generation Platform
+A focused Java platform for generating consistent invoices from structured entries through CLI and Swing workflows.
+
+- Separates reusable invoice logic from application launch modes
+- Groups structured entries by customer and period
+- Produces SVG and PDF document artifacts
+- Supports demo, JSON, CLI, GUI, and headless-friendly workflows
+- Platform documentation: [EgypTeam Invoicing](platforms/egyptteam-invoicing/)
+
+> EgypTeam Invoicing represents my interest in deterministic automation where calculation, provenance, and generated artifacts must remain reviewable.
 
 ---
 
