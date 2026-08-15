@@ -22,6 +22,7 @@ Local platform repositories may be used as private reference material, but this 
 | Galaxy | Active / operationally evolving | Local-first workstation management, device topology, audio, MIDI, runners, and remote desktop | [Open](galaxy/) |
 | EgypTeam Atlas | Active / evolving platform | Software lifecycle, deployment, diagnostics, automation, and operations governance | [Open](egypteam-atlas/) |
 | EgypTeam Invoicing | Active / focused platform | Invoice calculation, structured input processing, and SVG/PDF document generation | [Open](egyptteam-invoicing/) |
+| EgypTeam ADM | Active planning workspace | Software inventory, technical governance, ownership mapping, risks, and transition planning | [Open](egypteam-adm/) |
 
 ---
 
@@ -97,3 +98,4 @@ They are written as professional portfolio documentation, architecture summaries
 - Galaxy can contribute workstation topology, infrastructure operations, and device-integration patterns to Echora and future research.
 - EgypTeam Atlas can contribute lifecycle management, diagnostics, deployment evidence, and governance patterns across the platform portfolio.
 - EgypTeam Invoicing can contribute deterministic document-generation and financial artifact review patterns to EgypTeam POS and Aurum.
+- EgypTeam ADM can provide portfolio governance, ownership mapping, risk, roadmap, and transition-planning patterns across all platforms.

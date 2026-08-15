@@ -73,7 +73,7 @@ Add missing platform documentation for key systems.
 | FUT-09 | Add Galaxy platform documentation | @pedrofmj | 🔄 In Progress | Public architecture, relationships, roadmap, and research mapping |
 | FUT-10 | Add EgypTeam Atlas platform documentation | @pedrofmj | 🔄 In Progress | Public architecture, relationships, roadmap, and research mapping |
 | FUT-11 | Add EgypTeam Invoicing platform documentation | @pedrofmj | 🔄 In Progress | Public architecture, relationships, roadmap, and research mapping |
-| FUT-12 | Add EgypTeam ADM platform documentation | @pedrofmj | ⏳ Planned | Medium |
+| FUT-12 | Add EgypTeam ADM platform documentation | @pedrofmj | 🔄 In Progress | Public architecture, relationships, roadmap, and research mapping |
 
 ### Definition of Done (Sprint 3)
 - [ ] Each platform has: README.md, architecture overview, screenshots folder
