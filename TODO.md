@@ -66,9 +66,9 @@ Platform pages reviewed against local repositories:
 
 ## 4. Research Section Completion
 
-- [ ] Define the main research themes that connect to the software platforms.
+- [x] Define the main research themes that connect to the software platforms.
 - [x] Decide whether public EgypTeam research lines AATools and Babu should become profile platform pages, research-only entries, or remain external references. Current decision: research-only entries.
-- [ ] Add a research roadmap organized by theme.
+- [x] Add a research roadmap organized by theme.
 - [ ] Add a publication pipeline describing how proposals become experiments, reports, papers, and datasets.
 - [ ] Create a standard paper README structure.
 - [ ] Create a standard technical report README structure.
