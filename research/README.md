@@ -31,6 +31,7 @@ Research extends that identity by turning long-term engineering work into struct
 | [datasets](datasets/) | Public, synthetic, or anonymized datasets |
 | [figures](figures/) | Diagrams, charts, and publication figures |
 | [bibliography](bibliography/) | References, citations, and reading notes |
+| [Research roadmap](roadmap.md) | Main themes, staged priorities, dependencies, and artifact queue |
 
 ---
 
