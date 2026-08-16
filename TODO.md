@@ -86,7 +86,7 @@ Platform pages reviewed against local repositories:
 ## 5. Research Work To Add Beyond Folder READMEs
 
 - [ ] Draft one technical report from an existing platform.
-- [ ] Draft one research proposal from a concrete engineering problem.
+- [x] Draft one research proposal from a concrete engineering problem.
 - [ ] Define one experiment that can be run with synthetic data.
 - [ ] Create one synthetic dataset connected to a platform problem.
 - [ ] Create one architecture figure suitable for a future paper.

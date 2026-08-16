@@ -152,6 +152,7 @@ Long-term:
 ## Related Research
 
 - Research index: [Research](../../research/)
+- Research proposal: [Evidence-Backed Software Portfolio Governance](../../research/proposals/evidence-backed-software-portfolio-governance.md)
 - Primary direction: software portfolio management, technical governance, ownership mapping, and transition planning
 - Future artifacts: technical reports, synthetic software inventories, and controlled roadmap decision studies
 
