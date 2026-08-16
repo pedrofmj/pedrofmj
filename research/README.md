@@ -71,6 +71,8 @@ Initial publication-safe figures are available in the [Figures](figures/) index.
 
 The first whitepaper, [Traceable Applied Software Systems](whitepapers/traceable-applied-software-systems.md), presents a practical position on explicit context, evidence, and human review.
 
+The first research proposal, [Evidence-Backed Software Portfolio Governance](proposals/evidence-backed-software-portfolio-governance.md), defines a synthetic paired study of structured governance records, decision quality, and rationale traceability.
+
 ---
 
 ## Publication Status

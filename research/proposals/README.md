@@ -14,3 +14,9 @@ Each proposal should define:
 
 Proposals can later evolve into experiments, technical reports, papers, or datasets.
 
+## Proposals
+
+| Proposal | Focus | Status |
+| --- | --- | --- |
+| [Evidence-Backed Software Portfolio Governance](evidence-backed-software-portfolio-governance.md) | Structured context, uncertainty, and traceable technical decisions | Proposal |
+
