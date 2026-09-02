@@ -131,9 +131,22 @@ Infrastructure tools become more trustworthy when they model uncertainty explici
 
 ## Screenshots
 
-No public screenshots are included yet.
+The screenshots below show the public-facing workstation topology and the
+sanitized Agent Network workbench.
 
-Future images should be sanitized and added under [screenshots](screenshots/).
+### Workstation topology
+
+![Galaxy workstation topology showing computers, displays, audio equipment, MIDI controllers, and logical routes](screenshots/workstation-topology.png)
+
+### Agent Network workbench
+
+![Galaxy Agent Network console showing hosts, sessions, permission review, and workspace context](screenshots/agent-network-sanitized.png)
+
+The topology image documents the physical music workstation and its logical
+routes. The Agent Network image uses generic project, host, path, and session
+labels so it demonstrates the operator workflow without exposing private
+development context. The complete screenshot inventory is available under
+[screenshots](screenshots/).
 
 ---
 
