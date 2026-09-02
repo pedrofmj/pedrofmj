@@ -10,7 +10,7 @@ Galaxy is a local-first workstation manager for cataloging devices, modeling phy
 
 - Status: Active and operationally evolving
 - Documentation level: Public architecture and engineering summary
-- Public boundary: no credentials, private keys, enrollment links, customer data, or sensitive infrastructure details
+- Public boundary: no credentials, private keys, customer data, private identifiers, or sensitive infrastructure details
 
 ---
 
@@ -32,7 +32,7 @@ Galaxy exists to make the workstation model explicit, preserve confirmed versus 
 
 ## Engineering Problem
 
-An integrated workstation may combine local devices, remote machines, audio profiles, display controls, MIDI routing, self-hosted CI runners, virtual machines, and remote desktop sessions.
+An integrated workstation may combine local devices, remote machines, audio profiles, display controls, MIDI routing, automated build workers, virtual machines, and remote desktop sessions.
 
 Galaxy addresses the coordination problem by separating device models from physical devices, representing logical connections, and exposing operational workflows through focused commands and workbenches.
 
@@ -46,7 +46,7 @@ At a public level, Galaxy can be described through these layers:
 - Physical device inventory for concrete workstation instances
 - Logical connection model for video, input, audio, and MIDI relationships
 - Desktop and browser workbenches for topology visualization and control
-- Operational command layer for development machines, CI runners, and remote desktop
+- Operational command layer for managed workstations, automated build workers, and remote desktop
 - Host and virtual-machine documentation for infrastructure context
 - Read-only mode and confirmation boundaries for safer workstation changes
 
@@ -56,8 +56,8 @@ flowchart LR
     workbench --> catalog[Device and workstation catalog]
     catalog --> routes[Video input audio and MIDI routes]
     workbench --> controls[Approved workstation controls]
-    controls --> host[Hosts services and virtual machines]
-    controls --> runners[Self-hosted CI runner fleet]
+    controls --> host[Managed hosts and virtual machines]
+    controls --> runners[Automated build workers]
     catalog --> docs[Topology and operational documentation]
 ```
 
@@ -76,7 +76,7 @@ The platform is connected to these technology areas:
 - MIDI and patchbay graph inspection
 - DDC/CI monitor control
 - Linux services and systemd user units
-- GitHub Actions self-hosted runner operations
+- automated build-worker operations
 - XRDP and Xorg session workflows
 - local workstation and Kubernetes-adjacent operational tooling
 
@@ -103,7 +103,7 @@ Tradeoffs considered:
 
 ## Usage Scenario
 
-An operator opens the workstation workbench, reviews the current topology, selects a display or audio profile, and confirms an approved change. The same platform can inspect development-machine convergence, runner health, MIDI state, or remote-desktop installation through dedicated operational commands.
+An operator opens the workstation workbench, reviews the current topology, selects a display or audio profile, and confirms an approved change. The same platform can inspect workstation synchronization, build-worker health, MIDI state, or remote-desktop installation through dedicated operational commands.
 
 ---
 
@@ -138,13 +138,21 @@ sanitized Agent Network workbench.
 
 ![Galaxy workstation topology showing computers, displays, audio equipment, MIDI controllers, and logical routes](screenshots/workstation-topology.png)
 
-### Agent Network workbench
+### Agent Network overview
 
-![Galaxy Agent Network console showing hosts, sessions, permission review, and workspace context](screenshots/agent-network-sanitized.png)
+![Galaxy Agent Network overview showing online hosts, adapters, transport, and workspace sessions](screenshots/agent-network-sanitized.png)
+
+### Permission queue
+
+![Galaxy Agent Network permission queue showing explicit operator decisions for agent actions](screenshots/agent-network-permission-queue.png)
+
+### Code review workflow
+
+![Galaxy Agent Network code review workflow showing agent output, changed files, and test execution](screenshots/agent-network-code-review.png)
 
 The topology image documents the physical music workstation and its logical
-routes. The Agent Network image uses generic project, host, path, and session
-labels so it demonstrates the operator workflow without exposing private
+routes. The Agent Network images use generic project, host, path, and session
+labels so they demonstrate operator workflows without exposing private
 development context. The complete screenshot inventory is available under
 [screenshots](screenshots/).
 
@@ -160,7 +168,7 @@ Near-term:
 Medium-term:
 
 - [Engineering quality] Expand automated tests around topology consistency and read-only behavior.
-- [Operations] Improve recovery workflows for runners, development machines, and remote desktop.
+- [Operations] Improve recovery workflows for build workers, managed workstations, and remote desktop.
 
 Long-term:
 
