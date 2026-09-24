@@ -23,3 +23,14 @@ This directory contains sanitized Echora visual concepts copied from the current
 - `echora-web-peer-workspace.png` - web peer DAW workspace
 
 Only add assets that do not expose proprietary source code, private data, credentials, or customer information.
+
+## MIDI Router Captures
+
+- `01-performance-rig.png` - Performance Rig view with live device and profile state
+- `02-services.png` - Services view with audio and performance service controls
+- `03-audio-outputs.png` - Audio output sink routing dialog
+- `04-topology.png` - MIDI topology and diagnostics view
+- `05-aliases.png` - MIDI alias management view
+- `06-profiles.png` - Routing profile management view
+
+These runtime captures are sanitized interface views and do not expose proprietary source code, private data, credentials, or deployment details.
