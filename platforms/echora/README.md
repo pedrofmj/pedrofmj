@@ -105,6 +105,24 @@ The following are the latest sanitized visual concepts for the planned Echora ex
 
 The complete inventory, including recording, sampler, notation, mastering, remote-performance, instrument-builder, and project-template concepts, is available in [screenshots](screenshots/).
 
+### Echora MIDI Router
+
+These additional sanitized captures show the live MIDI Router operational surface rather than planned DAW concepts.
+
+| Performance Rig | Services |
+| --- | --- |
+| <a href="screenshots/01-performance-rig.png"><img src="screenshots/01-performance-rig.png" alt="Echora MIDI Router Performance Rig view" width="420"></a><br><sub>Performance Rig and live device state</sub> | <a href="screenshots/02-services.png"><img src="screenshots/02-services.png" alt="Echora MIDI Router Services view" width="420"></a><br><sub>Audio and performance service controls</sub> |
+
+| Audio Outputs | Topology |
+| --- | --- |
+| <a href="screenshots/03-audio-outputs.png"><img src="screenshots/03-audio-outputs.png" alt="Echora MIDI Router audio output routing dialog" width="420"></a><br><sub>Audio output sink selection</sub> | <a href="screenshots/04-topology.png"><img src="screenshots/04-topology.png" alt="Echora MIDI Router MIDI topology view" width="420"></a><br><sub>Discovered MIDI topology and diagnostics</sub> |
+
+| Aliases | Profiles |
+| --- | --- |
+| <a href="screenshots/05-aliases.png"><img src="screenshots/05-aliases.png" alt="Echora MIDI Router aliases view" width="420"></a><br><sub>Stable MIDI port aliases</sub> | <a href="screenshots/06-profiles.png"><img src="screenshots/06-profiles.png" alt="Echora MIDI Router profiles view" width="420"></a><br><sub>Persistent routing profiles</sub> |
+
+These runtime captures contain interface state only and do not include source code, credentials, private customer data, or deployment details.
+
 ---
 
 ## Future Roadmap

@@ -90,6 +90,7 @@ The goal is to explain purpose, motivation, business problem, architecture direc
 
 - [Aletheia](platforms/aletheia/) - agent environments, cognitive modeling, scripting, and AI-assisted reasoning
 - [Emulare](platforms/emulare/) - hardware and device emulation for testing and integration
+- [Echora](platforms/echora/) - music-production runtime, MIDI routing, and live performance control
 - [EgypTeam Via](platforms/egyptteam-via/) - commercial workflows, dynamic sales-cart lifecycle, and payment-state consistency
 - [EgypTeam POS](platforms/egyptteam-pos/) - professional operating system for clients, opportunities, documents, invoices, and AI-assisted workflows
 - [CDM](platforms/cdm/) - water measurement collection, batch synchronization, evidence, and reporting
