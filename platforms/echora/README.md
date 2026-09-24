@@ -20,6 +20,62 @@ Echora brings project work, MIDI devices, instruments, audio playback, routing, 
 
 ---
 
+## Performance Rig
+
+The Performance Rig is the reusable live-performance model behind Echora's
+performance-oriented control surface. It describes a complete musical setup as
+structured data rather than as one computer, one project file, or one fixed
+audio graph.
+
+A Rig brings together:
+
+- physical controller slots and device-discovery rules
+- hardware presets and semantic control mappings
+- sound engines, effects, MIDI routes, and audio services
+- named Rig Profiles for complete performance contexts
+- Device Profiles that assign a musical role to each device slot
+- readiness, takeover, state, and rollback rules for safe transitions
+
+This separation allows the same controller to take different roles without
+rebuilding the entire setup. An Arturia KeyLab can select a full live rack,
+organ, synth, or genre-oriented profile, while the other connected devices keep
+their own roles and state. The default full-rack profile remains the known-good
+recovery path while alternative profiles are validated independently.
+
+The model also separates portable musical intent from operating-system details.
+Platform bindings resolve logical devices and targets to host-specific MIDI,
+audio, service, and plugin identities. That boundary makes the authored profile
+model portable while keeping activation and recovery explicit.
+
+---
+
+## Echora MIDI Router
+
+The Echora MIDI Router manages persistent connections between MIDI ports. It
+discovers the current topology, gives ports stable aliases, stores reusable
+connection profiles, applies or removes connections, and reports diagnostics and
+route status as devices and applications appear or disappear.
+
+The router is deliberately distinct from MIDI event routing. Port routing answers
+which devices and applications are connected; event routing answers what to do
+with a MIDI message after it enters the system. Keeping those concerns separate
+allows connection profiles, musical mappings, and Performance Rig roles to
+evolve without sharing one overloaded configuration model.
+
+The router runs behind the Echora daemon. Its standalone window, embedded dialog,
+legacy internal frame, and future workspace panel use the same client contract
+and runtime state rather than maintaining separate business rules. The
+Performance Rig view builds on that boundary to show devices, active profiles,
+services, audio outputs, routes, and transition state in one operational surface.
+
+The interface is designed to show confirmed runtime truth. A profile request is
+only considered active after the relevant services, ports, routes, and profile
+state have been checked. Safe process-rebuild transitions remain the default;
+faster warm-engine transitions are treated as an explicit future mode with
+validation and fallback to the known-good state.
+
+---
+
 ## Motivation
 
 Music-production tools often split composition, hardware control, routing, and remote operation into separate experiences. Echora explores a coherent workstation in which tracks, clips, devices, routes, transport, and meters remain immediately accessible.
